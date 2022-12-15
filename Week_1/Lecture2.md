@@ -14,10 +14,10 @@
 ## Command Prompt
 
 ```terminal
-username@hostname:~$
+username@hostname:~$ 
 ```
 
-` ~ ` : Symbolic representation for home directory. This is present working directory.
+` ~ ` : Symbolic representation for home directory. This is working directory. Terminal opens this directory after launch. 
 
 ` @ `,  ` : `, and ` $ ` : command prompt decorators.
 
@@ -25,7 +25,9 @@ A command prompt can be empty.
 
 ## Simple Commands
 ### Syntax
-` command` `[[options] [arguments]] `
+` root@localhost:~$ command [[options] [arguments]] `
+  - `option` starts with `-` (single letter as option) or `--` (words as option)
+
 | ` command ` | `[[options] [arguments]] ` | Description |
 | ----------- | ----------- | ---------- |
 | ` pwd `     |             | Prints path of current/working directory. |
@@ -33,10 +35,12 @@ A command prompt can be empty.
 |             | ` -a `      | Include hidden files while listing files. `.` is a prefix for hidden files. |
 |             | ` -l `      | Lists the files and directories in long listing format. |
 | ` man `     | ` command ` | See the mannual page for command ` command ` | 
-| ` uname `   |             | Print the operating systemi name. |
+| ` uname `   |             | Print the operating system name. |
 |             | ` -a `      | Print the system information in a sentence. |
 | ` ps `      |             | The users currently running processes. | 
-| ` clear `   |             | Clears the whole screen.  Not possible to navigate the screen by scrolling. |
-| ` ctrl + L (l) ` |        | Clears the whole screen. Possible to navigate screen using scrolling. 
-| ` exit ` |           |  Exit shell/shell script |
-|          |   number  | Exit with exit status denoted by number. |
+| ` clear `   |             | Clears the screen.  Not possible to navigate the screen by scrolling. |
+| ` ctrl + L (l) ` |        | Clears the screen. Possible to navigate screen using scrolling. 
+| ` exit `    |             |  Exit shell/shell script |
+|             |   number    | Exit with exit status denoted by number. |
+| ` ctrl + d (D) ` |        | Exit the shell/shell script/interactive command |
+
