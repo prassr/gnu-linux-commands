@@ -27,37 +27,20 @@ A command prompt can be empty.
 - ` clear `
     * Clears the whole screen
     * Not possible to navigate by scrolling.
-
 - ` ctrl + L ` or ` ctrl + l `
     * Clears the whole screen.
     * Possible to navigate using scrolling.
 
 ## Simple Commands
-
-#### Syntax 
-
-` command` `[options]` `[arguments] `
-
-` pwd ` 
-    - prints path of current/working directory.
-
-
-` ls` 
-    - lists the files and directories.
-    
-    - Options
-    
-          * ` -l ` - lists the files and directories in long listing format.
-          * ` -a ` - include hidden files while listing files. `.` is a prefix for hidden files.
-
-` man command ` 
-    - see the mannual page for command ` command `.
-
-` uname ` 
-    - print the operating system.
-    - Options
- 
-        * ` -a ` - print the system information in a sentence.
-    
-    
-
+### Syntax
+` command` `[[options] [arguments]] `
+| ` command ` | `[[options] [arguments]] ` | Description |
+| ----------- | ----------- | ---------- |
+| ` pwd `     |             | prints path of current/working directory. |
+| ` ls `      |             | lists the files and directories. |
+|             | ` -a `      | include hidden files while listing files. `.` is a prefix for hidden files. |
+|             | ` -l `      | lists the files and directories in long listing format. |
+| ` man `     | ` command ` | see the mannual page for command ` command ` | 
+| ` uname `   |             | print the operating system. |
+|             | ` -a `      | print the system information in a sentence.
+|||| 
