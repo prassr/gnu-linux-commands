@@ -45,9 +45,13 @@ A command prompt can be empty.
     <td><strong><code><a href="#wildcards">wildcards</code></strong></td>
     <td><code>?</code> matches single character. <code>*</code> matches 0 or more characters.</td>
    </tr>
+  <tr id="cd_b">
+    <td><strong><code><a href="cd">cd</a></code></strong></td>
+    <td>Change the working directory.</td>
+   </tr>
   <tr id="man_b">
     <td><strong><code><a href="#man">man</a></code></strong></td>
-    <td>See the mannual page for a command</td>
+    <td>See the mannual page for a command.</td>
    </tr>
   <tr id="uname_b">
     <td><strong><code><a href="#uname">uname</a></code></strong></td>
@@ -148,6 +152,27 @@ drwxrwxrwx 5 groot groot 3488 Dec 15 10:57 Downloads
 
 [ back ](#simple-commands-overview)
 
+### ` cd `
+* Without any argument or ` ~ ` as argument this commands makes user's home directory as working directory.
+```bash
+~$ cd
+~$ cd ~
+~$ cd Desk*
+~/Desktop$  
+```
+* `-` is used to navigate to previous working directory if `OLDPWD` environment variable is set.
+```bash
+~$ cd -
+```
+```terminal
+bash: cd: OLDPWD not set
+```
+```bash
+~$ cd /
+/$ cd -
+~$ 
+```
+
 ### ` man ` page sections
 
 | Section | Type of pages |
@@ -176,7 +201,7 @@ drwxrwxrwx 5 groot groot 3488 Dec 15 10:57 Downloads
   * **` /home `**  : User specific profiles home directory.
     - **` /groot `** : prassr's home directory
   * **` /boot `** : Static files of the boot loader
-  * **` /dev `** : Device files
+  * **` /dev `** : Device files (Every device is represented as file.)
   * **` /etc `** : Host specific system configuration.
   * **` /lib `** : Essential shared libraries and kernel modules
   * **` /media `** : Mount points for removable devices
@@ -184,7 +209,7 @@ drwxrwxrwx 5 groot groot 3488 Dec 15 10:57 Downloads
   * **` /opt `** : Add on application software packages
   * **` /run `** : Data relevant to running processes
   * **` /sbin `** : Essential system binaries
-  * **` /srv `** : Data for services
+  * **` /srv `** : Data for ftp/http services
   * **` /tmp `** : Temporary files
   * **` /usr `** : Secondary hierarchy
     - **` /bin `** : User commands
@@ -198,7 +223,7 @@ drwxrwxrwx 5 groot groot 3488 Dec 15 10:57 Downloads
     - **` /cache `** : Application cache data
     - **` /lib `** : Variable state information
     - **` /local `** : Variable data for /usr/local
-    - **` /lock ` : Lock files
+    - **` /lock `** : Lock files
     - **` /log `** : Log files and directories
     - **` /run `** : Data relevant to running processes
     - **` /tmp `** : Temporary files preserved between reboots
