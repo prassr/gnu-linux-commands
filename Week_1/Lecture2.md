@@ -46,7 +46,7 @@ A command prompt can be empty.
     <td><code>?</code> matches single character. <code>*</code> matches 0 or more characters.</td>
    </tr>
   <tr id="cd_b">
-    <td><strong><code><a href="cd">cd</a></code></strong></td>
+    <td><strong><code><a href="#cd">cd</a></code></strong></td>
     <td>Change the working directory.</td>
    </tr>
   <tr id="man_b">
