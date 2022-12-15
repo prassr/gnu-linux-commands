@@ -38,18 +38,26 @@ A command prompt can be empty.
 
 ` command` `[options]` `[arguments] `
 
-` pwd ` - prints path of current/working directory.
+` pwd ` 
+    - prints path of current/working directory.
 
-` ls` - lists the files and directories.
 
-    - Options - `ls [option]`
-        * ` -l ` - lists the files and directories in long listing format.
-        * ` -a ` - include hidden files while listing files. `.` is a prefix for hidden files.
+` ls` 
+    - lists the files and directories.
+    
+    - Options
+    
+          * ` -l ` - lists the files and directories in long listing format.
+          * ` -a ` - include hidden files while listing files. `.` is a prefix for hidden files.
 
-` man command ` - see the mannual page for command ` command `.
+` man command ` 
+    - see the mannual page for command ` command `.
 
-` uname ` - print the operating system.
-    * ` -a ` - print the system information in a sentence.
+` uname ` 
+    - print the operating system.
+    - Options
+ 
+        * ` -a ` - print the system information in a sentence.
     
     
 
