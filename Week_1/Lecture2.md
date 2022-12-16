@@ -197,9 +197,9 @@ bash: cd: OLDPWD not set
 > Path for traversal can be absolute or relative.
 
 - **` / `** : Root directory
-  * **` /root `**  : Superuser's home directory.
-  * **` /home `**  : User specific profiles home directory.
-    - **` /groot `** : prassr's home directory
+  * **` /root `**  : Superuser's home directory
+  * **` /home `**  : User specific profiles home directory
+    - **` /groot `** : groot's home directory
   * **` /boot `** : Static files of the boot loader
   * **` /dev `** : Device files (Every device is represented as file.)
   * **` /etc `** : Host specific system configuration.
