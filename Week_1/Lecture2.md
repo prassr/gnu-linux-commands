@@ -26,7 +26,10 @@ A command prompt can be empty.
 ## Simple Commands Overview
 ### Syntax
 ` root@localhost:~$ command [[options] [arguments]] `
-  - Usually `option` takes `-` (single letter as option) or `--` (words as option) as prefix.
+### Type of options
+1. UNIX options, which may be grouped and must be preceded by a dash.
+2. BSD options, which may be grouped and must not be used with a dash.
+3. GNU long options, which are preceded by two dashes.
 
 <table border=1>
   <tr>
@@ -82,19 +85,6 @@ A command prompt can be empty.
     <td></td>
    </tr>
 </table>
-
-|             | ` -a `      | | Include hidden files while listing files. `.` is a prefix for hidden files. |
-|             | ` -l `      | | Lists the files and directories in [long listing format](#long-listing-format). |
-| ` man `     | | ` command ` | See the mannual page for command ` command ` | 
-|             | [` section `](#man-page-sections) | ` command ` | See the mannual page for command ` command ` in section ` section ` |
-| ` uname `   |             | | Print the operating system name. |
-|             | ` -a `      | | Print the system information in a sentence. |
-| ` ps `      |             | | The users currently running processes. | 
-| ` clear `   |             | | Clears the screen.  Not possible to navigate the screen by scrolling. |
-| ` ctrl + L (l) ` |        | | Clears the screen. Possible to navigate screen using scrolling. 
-| ` exit `    |             | |  Exit shell/shell script |
-|             ||   number    | Exit with exit status denoted by number. |
-| ` ctrl + D (d)` |        | Exit the shell/shell script/interactive command |
 
 ### ` pwd `
 ```bash
@@ -163,8 +153,6 @@ drwxrwxrwx 5 groot groot 3488 Dec 15 10:57 Downloads
 * `-` is used to navigate to previous working directory if `OLDPWD` environment variable is set.
 ```bash
 ~$ cd -
-```
-```terminal
 bash: cd: OLDPWD not set
 ```
 ```bash
@@ -172,6 +160,49 @@ bash: cd: OLDPWD not set
 /$ cd -
 ~$ 
 ```
+
+### ` man `
+Syntax : ` man [option] command `
+* To see the man page for ` ls `.
+* Exit man page using `q`.
+```terminal
+~$ man ls 
+```
+
+* ` man ` takes numbers 1-9 as argument. These numbers denote [section](#man-page-sections). 
+* To see the first section of ` ls ` command.
+```terminal
+~$ man 1 ls 
+```
+
+### ` uname `
+* Prints the operating system name.
+```terminal
+~$ uname
+```
+
+* Prints the system information.
+```terminal
+~$ uname -a
+```
+
+### ` ps `
+* List the processes by current user.
+* It displays 
+	1. the process ID (pid=PID)
+	2. the terminal associated with the process (tname=TTY)
+	3. the cumulated CPU time in [DD-]hh:mm:ss format (time=TIME)
+	4. the executable name (ucmd=CMD).  
+* Output is unsorted by default.
+
+| ` command ` | options | Description |
+| :--------:  | :------:| ------------ | 
+| ` ps `      |         | The user’s currently running processes |
+| ` ps `      | ` -f `  | Full listing of the user’s currently running processes | 
+| ` ps `      | ` -e `  |fFull listing of all processes, except kernel processes |
+| ` ps `      | ` -A `  | All processes, including kernel processes | 
+| ` ps `      | ` -Kf   | `Full listing of kernel processes |
+| ` ps `      | ` auxw `| Wide listing sorted by percentage of CPU usage, %CPU |
 
 ### ` man ` page sections
 
@@ -187,7 +218,7 @@ bash: cd: OLDPWD not set
 | 8 | System administration commands |
 | 9 | Kernel routines |
 
-[ back ](#simple-commands-overview)
+[back](#simple-commands-overview)
 
 ## Filesystem Hierarchy Standard
 > ` / ` is the root of the file system.
