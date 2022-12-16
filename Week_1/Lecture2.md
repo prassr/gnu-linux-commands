@@ -63,16 +63,8 @@ A command prompt can be empty.
     <td>Clears the screen for whole session.  Not possible to navigate the screen by scrolling.</td>
    </tr>
    <tr>
-    <td><strong><code>ctrl + L</code></strong></td>
-    <td></td>
-   </tr>
-   <tr>
     <td><strong><code>exit</code></strong></td>
     <td>Exit shell/shell script.</td>
-   </tr>
-  <tr>
-    <td><strong><code>ctrl + D</code></strong></td>
-    <td> Exit the shell/shell script/interactive command.</td>
    </tr>
   <tr>
     <td><strong><code></code></strong></td>
@@ -102,7 +94,7 @@ Desktop  Documents
 ```
 
 * Include hidden files while listing files. `.` is a prefix for hidden files.
-	` ls -a <name> `
+* ` ls -a <name> `
 ```terminal
 ~$ ls -a
 .            .cache         Documents                                   
@@ -112,15 +104,15 @@ Desktop  Documents
 ` . ` and ` .. ` are [special files](#filesystem-hierarchy-standard)
 
 * Lists the files and directories in [long listing format](#long-listing-format)
-	` ls -l <name> `
+* ` ls -l <name> `
 ```terminal
 ~$ ls -l
 drwxrwxr-x 5 groot groot 21 Dec 12 18:52 Desktop  
 drwxrwxr-x 2 groot groot  3 Nov 19 19:41 Desktop
 ```
 
-* Print the inode number. [More on inode](#types-of-links)
-	` ls -i <name> `
+* Print the inode number. [More on inode](#hard-links-and-soft-links)
+* ` ls -i <name> `
 ```terminal
 ~$ ls -i ~
 ```
@@ -152,9 +144,11 @@ drwxrwxrwx 5 groot groot 3488 Dec 15 10:57 Downloads
 
 ### File Permission String
 * It is a 9 character string, starting after file type.
-* Each character represents binary digit 0 or 1.
-* Order : ` r ` - read, ` w ` - write, ` x ` - execute
-* ` x ` for directory means you can change to the directory. 
+* Each character is switch to binary digit 0 or 1.
+* Order : ` r ` - read (4), ` w ` - write (2), ` x ` - execute (1). Numbers are bit values in parentheses.
+* Sum of bit values gives octal representations for permissions specific to user, group or other.
+* ` w ` : Permission required to create, modify or delete a file within a directory.
+* ` x ` : When set on directories, a user can search or change to them. 
 * ` - ` : off
 * ` ? ` : unknown
 * e.g. ` rwxrwx--- ` or `770`
@@ -162,7 +156,7 @@ drwxrwxrwx 5 groot groot 3488 Dec 15 10:57 Downloads
 	- Group permissions, character [4-6] (7)
 	- Other permissions, character [7-9] (0)
 	
-| characters | number |
+| characters | octal |
 | :---: | :---: |
 | ` --- ` | 0 | 
 | ` --x ` | 1 | 
@@ -174,7 +168,7 @@ drwxrwxrwx 5 groot groot 3488 Dec 15 10:57 Downloads
 [ back ](#simple-commands-overview)
 
 ### ` cd `
-	` cd <dirname> `
+` cd <dirname> `
 * Without any argument or ` ~ ` as argument this commands makes user's home directory as working directory.
 ```terminal
 ~$ cd
@@ -194,9 +188,9 @@ bash: cd: OLDPWD not set
 [back](#cd_b)
 
 ### ` man `
-	` man [option] command `
+* See man pages. Exit man page using `q`.
+* ` man [option] command `
 * To see the man page for ` ls `.
-* Exit man page using `q`.
 ```terminal
 ~$ man ls 
 ```
@@ -244,21 +238,120 @@ bash: cd: OLDPWD not set
 [back](#ps_b)
 
 ### ` mkdir `
-* Create a directory
-> mkdir <dirname>
+
+* ` mkdir <dirname ...> ` : Create a directory/ directories.
 ```terminal
-~$ mkdir level1
+~$ mkdir level1 level2
 ```
 
 ### ` chmod `
-* Change the permissions
-* options : ` u ` user, ` g ` group and 	` o ` other
-` chmod [[[-]option[-+]<permission-string>][number]]<file-name> `
-// create table
-> ` chmod <number> <filename>` 
-> ` chmod u+<permission-string> <filename> ` give permissions for `u`ser
-> ` chmod u-<permission-string> <filename> ` remove permissions for `u`ser            
-> `  `
+* Change permissions of a file ( only owners of a file can change permissions. )
+* ` chmod MODE <file-name> `
+* MODE : [ugoa][+-=][perm]
+* Multiple MODE can be separated by comma.
+* Characters controlling which users' access to be changed 
+	- ` u ` user, ` g ` group , ` o ` other and `a` all
+* ` + ` : file mode bits are added to existing file mode bits.
+* ` - ` : file mode bits are removed from existing file mode bits. If used as ` -[ugoa] `, removes all permissions for `u`, 'g', `o` or `a`.
+* ` = ` : only specified file mode bits are kept, all other bits are removed.
+* Add ` rw ` permissions on file `hello.txt` for all. 
+```terminal
+~$ chmod a+rw hello.txt
+```
+* Remove ` w ` permission on file ` hello.txt ` for users within group and other users.
+```terminal
+~$ chmod go-w hello.txt
+```
+* Remove all permissions on file ` hello.txt ` for others.
+```terminal
+~$ chmod -o hello.txt
+```
+
+### ` touch `
+* Changes modified timestamp if the file exits.
+* otherwise creates a new file.
+* ` touch <filename> `
+* Create file ` hello.py `
+```terminal
+~$ touch hello.py
+```
+
+### ` cp `
+* Create a copy of a file
+* ` cp <source> <destination> ` : Copy a source file to destination file.
+* Make a copy of ` hello.py ` as ` greeting.py `.
+```terminal
+~$ cp hello.py greet.py
+```
+
+### ` mv `
+* Rename or move a file.
+* ` mv <source> <destination> ` : Move a file from source to destination. 
+* ` mv <old name> <new name> ` : Rename a file
+* Moving file ` hello.py ` to directory ` level1 `.
+```terminal
+~$ mv hello.py level1
+```
+* Rename ` greet.py ` as ` greetings.py `
+```terminal
+~$ mv greet.py greetings.txt
+```
+* ` "file name" ` Using space in file name.
+```terminal
+~$ mv level1 "level 1"
+```
+* To refer to ` 'level 1' ` use quotes around it.
+
+### ` rm `
+* ` rm  <file> ` : Remove file or files.
+* Remove ` greetings.txt `
+```terminal
+~$ rm greetings.txt
+```
+* ` rm -r <file>` : Delete a directory and it's contents recursively (` -r `).
+* Delete directory ` 'level 1' `.
+```terminal
+~$ ` rm -r "level 1"`
+```
+* ` rm -i <file>` : Ask before deletion. Interactive (` -i `). ((y/'') - yes, n - no)
+```terminal
+~$ ` rm -ir level2 `
+rm: remove directory 'level2'? n
+```
+
+### ` alias `
+* ` alias ` : List all ` alias`ed commands.
+* ` alias command="aliasing command" ` : Add an alias for ` command ` command.
+* Add ` alias ` for ` rm -i ` as ` rm ` command. 
+```terminal
+~$ alias rm="rm -i"
+```
+
+### Hard Links and Soft Links
+* inode number : An entry in the filesystem table about the location in the storage media.
+* Hard Links : 
+	- Files with same inode number. 
+	- Regular file has 1 hard link
+	- Second entry in long listing format
+		* number of hard links present for that file. 
+
+### ` whoami `
+* Prints name of the current user.
+
+### ` less `
+* ` less filename ` : open file for reading.
+* Possible to ` scroll ` ` up ` or ` down ` through pages.
+* To read a log file do
+```terminal
+~$ less /var/log/alternatives.log
+```
+
+### ` file `
+* ` file <filename> ` : Prints the type of file.
+* Checking file type of ` znew `
+```terminal
+~$ file /usr/bin/znew
+```
 
 ### ` man ` page sections
 
@@ -321,3 +414,15 @@ bash: cd: OLDPWD not set
 | :---:   | :---:        | :---:          |
 | **static** | **` /usr `** **` /opt `** |  **` /etc `** **` /boot `** |
 | **variable** | **` /var/mail `** |  **` /var/run `** **` /var/lock `** |
+
+### Important Keyboard Keys
+
+| ` keys ` | Description |
+| :---:    | ---         |
+| ` ctrl + L ` | Clear screen. Possible to scroll up to view previous commands. |
+| ` ctrl + D ` |  Exit the shell/shell script/interactive command. | 
+| ` tab ` | Autocomplete the file names if unique, else show multiple possibilities. |
+| ` q ` | quit man page, pages opened by commands like ` less ` |
+
+   
+
