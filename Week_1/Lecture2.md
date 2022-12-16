@@ -24,12 +24,6 @@ username@hostname:~$
 A command prompt can be empty.
 
 ## Simple Commands Overview
-### Syntax
-` root@localhost:~$ command [[options] [arguments]] `
-### Type of options
-1. UNIX options, which may be grouped and must be preceded by a dash.
-2. BSD options, which may be grouped and must not be used with a dash.
-3. GNU long options, which are preceded by two dashes.
 
 <table border=1>
   <tr>
@@ -85,6 +79,13 @@ A command prompt can be empty.
     <td></td>
    </tr>
 </table>
+
+### Syntax
+` root@localhost:~$ command [[options] [arguments]] `
+### Type of options
+1. UNIX options, which may be grouped and must be preceded by a dash.
+2. BSD options, which may be grouped and must not be used with a dash.
+3. GNU long options, which are preceded by two dashes.
 
 ### ` pwd `
 ```bash
@@ -161,6 +162,8 @@ bash: cd: OLDPWD not set
 ~$ 
 ```
 
+[back](#cd_b)
+
 ### ` man `
 Syntax : ` man [option] command `
 * To see the man page for ` ls `.
@@ -175,6 +178,8 @@ Syntax : ` man [option] command `
 ~$ man 1 ls 
 ```
 
+[back]($man_b)
+
 ### ` uname `
 * Prints the operating system name.
 ```terminal
@@ -186,23 +191,28 @@ Syntax : ` man [option] command `
 ~$ uname -a
 ```
 
+[back]($uname_b)
+
 ### ` ps `
 * List the processes by current user.
+* Output is unsorted by default.
 * It displays 
 	1. the process ID (pid=PID)
 	2. the terminal associated with the process (tname=TTY)
 	3. the cumulated CPU time in [DD-]hh:mm:ss format (time=TIME)
 	4. the executable name (ucmd=CMD).  
-* Output is unsorted by default.
+
 
 | ` command ` | options | Description |
 | :--------:  | :------:| ------------ | 
 | ` ps `      |         | The user’s currently running processes |
 | ` ps `      | ` -f `  | Full listing of the user’s currently running processes | 
-| ` ps `      | ` -e `  |fFull listing of all processes, except kernel processes |
+| ` ps `      | ` -ef ` | Full listing of all processes, except kernel processes |
 | ` ps `      | ` -A `  | All processes, including kernel processes | 
-| ` ps `      | ` -Kf   | `Full listing of kernel processes |
+| ` ps `      | ` -Kf ` | Full listing of kernel processes |
 | ` ps `      | ` auxw `| Wide listing sorted by percentage of CPU usage, %CPU |
+
+[back](#ps_b)
 
 ### ` man ` page sections
 
@@ -218,7 +228,7 @@ Syntax : ` man [option] command `
 | 8 | System administration commands |
 | 9 | Kernel routines |
 
-[back](#simple-commands-overview)
+[back](#man)
 
 ## Filesystem Hierarchy Standard
 > ` / ` is the root of the file system.
@@ -258,8 +268,10 @@ Syntax : ` man [option] command `
     - **` /log `** : Log files and directories
     - **` /run `** : Data relevant to running processes
     - **` /tmp `** : Temporary files preserved between reboots
+    
+[back](#ls)
 
 |         | **sharable** | **unsharable** |
-| :---:   | :---: | :---: |
+| :---:   | :---:        | :---:          |
 | **static** | **` /usr `** **` /opt `** |  **` /etc `** **` /boot `** |
 | **variable** | **` /var/mail `** |  **` /var/run `** **` /var/lock `** |
