@@ -88,75 +88,103 @@ A command prompt can be empty.
 3. GNU long options, which are preceded by two dashes.
 
 ### ` pwd `
-```bash
-~$ pwd
-```
 ```terminal
+~$ pwd
 /home/groot
 ```
 
 [back](#pwd_b)
 
 ### ` ls `
-```bash
-~$ ls
-```
 ```terminal
+~$ ls
 Desktop  Documents 
 ```
 
-####  Include hidden files while listing files. `.` is a prefix for hidden files.
-```bash
-~$ ls -a
-```
+* Include hidden files while listing files. `.` is a prefix for hidden files.
+> ls -a <dirname>`
 ```terminal
-.            .cache         Documents                                                
+~$ ls -a
+.            .cache         Documents                                   
 ..           .config        Desktop                                   
 ```
 
 ` . ` and ` .. ` are [special files](#filesystem-hierarchy-standard)
 
-#### Lists the files and directories in [long listing format](#long-listing-format)
-```bash
-~$ ls -l
-```
+* Lists the files and directories in [long listing format](#long-listing-format)
+> ls -l <filename>`
 ```terminal
+~$ ls -l
 drwxrwxr-x 5 groot groot 21 Dec 12 18:52 Desktop  
 drwxrwxr-x 2 groot groot  3 Nov 19 19:41 Desktop
 ```
+
+* Print the inode number. [More on inode](#types-of-links)
+> ` ls -i <file name> `
+```terminal
+~$ ls -i ~
+```
+
 [back](#ls_b)
 
 ### Long Listing Format
-In long listing format the output contains 9 columns with space as separator.
 ```terminal
 drwxrwxrwx 5 groot groot 3488 Dec 15 10:57 Downloads 
 ```
-* ` d ` : file type, ` d ` for directory. [More on file type]{#}
+* ` d ` : file type, ` d ` for directory. [More on file type](#file-types)
 * ` rwxrwxrwx ` : Owner, group and other permissions.
 * ` 5 ` : number of hard links.
 * ` groot ` : Owner of the file.
 * ` groot ` : Group of the owner.
-* ` 3488 ` : Size of the file in Bytes. Denotes meta data size in case of  directory.
-* ` Dec 15 10:57 ` : Last modified timestamp for file (consider as separate columns).
-* ` Downloads ` : directory or file name.
+* ` 3488 ` : Size of the file in Bytes.
+* ` Dec 15 10:57 ` : Last modified timestamp for file (considered here as separate columns).
+* ` Downloads ` : file name.
 * ( ` -> /storage/shared/Documents/ ` ) : Optional column for symbolic links.
+
+### File Types
+* ` - ` : Regular file
+* ` d ` : Directory / Folder
+* ` l ` : Symbolic [link](#types-of-links)
+* ` c ` : Character file (e.g. terminal ` tty `)
+* ` b ` : Block file (e.g. Hard Disk (` sda `))
+* ` s ` : Socket file
+* ` p ` : Named pipe
+
+### File Permission String
+* It is a 9 character string, starting after file type.
+* Each character represents binary digit 0 or 1.
+* Order : ` r ` - read, ` w ` - write, ` x ` - execute
+* ` x ` for directory means you can change to the directory. 
+* ` - ` : off
+* ` ? ` : unknown
+* e.g. ` rwxrwx--- ` or `770`
+	- Owner permissions, character [1-3] (7)
+	- Group permissions, character [4-6] (7)
+	- Other permissions, character [7-9] (0)
+	
+| characters | number |
+| :---: | :---: |
+| ` --- ` | 0 | 
+| ` --x ` | 1 | 
+| ` r-- ` | 4 | 
+| ` r-x ` | 5 |
+| ` rw- ` | 6 |
+| ` rwx ` | 7 |
 
 [ back ](#simple-commands-overview)
 
 ### ` cd `
 * Without any argument or ` ~ ` as argument this commands makes user's home directory as working directory.
-```bash
+```terminal
 ~$ cd
 ~$ cd ~
 ~$ cd Desk*
 ~/Desktop$  
 ```
 * `-` is used to navigate to previous working directory if `OLDPWD` environment variable is set.
-```bash
+```terminal
 ~$ cd -
 bash: cd: OLDPWD not set
-```
-```bash
 ~$ cd /
 /$ cd -
 ~$ 
@@ -165,7 +193,7 @@ bash: cd: OLDPWD not set
 [back](#cd_b)
 
 ### ` man `
-Syntax : ` man [option] command `
+> ` man [option] command `
 * To see the man page for ` ls `.
 * Exit man page using `q`.
 ```terminal
@@ -174,6 +202,7 @@ Syntax : ` man [option] command `
 
 * ` man ` takes numbers 1-9 as argument. These numbers denote [section](#man-page-sections). 
 * To see the first section of ` ls ` command.
+> ` man section command `
 ```terminal
 ~$ man 1 ls 
 ```
@@ -214,10 +243,27 @@ Syntax : ` man [option] command `
 
 [back](#ps_b)
 
+### ` mkdir `
+* Create a directory
+> mkdir <dirname>
+```terminal
+~$ mkdir level1
+```
+
+### ` chmod `
+* Change the permissions
+* options : ` u ` user, ` g ` group and 	` o ` other
+` chmod [[[-]option[-+]<permission-string>][number]]<file-name> `
+// create table
+> ` chmod <number> <filename>` 
+> ` chmod u+<permission-string> <filename> ` give permissions for `u`ser
+> ` chmod u-<permission-string> <filename> ` remove permissions for `u`ser            
+> `  `
+
 ### ` man ` page sections
 
 | Section | Type of pages |
-| ------- | ------------- |
+| :-------: | ------------- |
 | 1 | Executable programs of shell commands |
 | 2 | System calls provided by kernel |
 | 3 | Library calls | 
@@ -240,7 +286,7 @@ Syntax : ` man [option] command `
 - **` / `** : Root directory
   * **` /root `**  : Superuser's home directory
   * **` /home `**  : User specific profiles home directory
-    - **` /groot `** : groot's home directory
+    - **` /home/groot `** : groot's home directory
   * **` /boot `** : Static files of the boot loader
   * **` /dev `** : Device files (Every device is represented as file.)
   * **` /etc `** : Host specific system configuration.
@@ -253,21 +299,21 @@ Syntax : ` man [option] command `
   * **` /srv `** : Data for ftp/http services
   * **` /tmp `** : Temporary files
   * **` /usr `** : Secondary hierarchy
-    - **` /bin `** : User commands
-    - **` lib `** : Libraries
-    - **` /local `** : Local hierarchy
-    - **` /sbin `** : Non-vital system binaries
-    - **` /share `** Architecture dependent data
-    - **` /include `** Header files included by C programs
-    - **` /src `** : Source code
+    - **` /usr/bin `** : User commands
+    - **` /usr/lib `** : Libraries
+    - **` /usr/local `** : Local hierarchy
+    - **` /usr/sbin `** : Non-vital system binaries
+    - **` /usr/share `** Architecture dependent data
+    - **` /usr/include `** Header files included by C programs
+    - **` /usr/src `** : Source code
   * **` /var `** : Variable data
-    - **` /cache `** : Application cache data
-    - **` /lib `** : Variable state information
-    - **` /local `** : Variable data for /usr/local
-    - **` /lock `** : Lock files
-    - **` /log `** : Log files and directories
-    - **` /run `** : Data relevant to running processes
-    - **` /tmp `** : Temporary files preserved between reboots
+    - **` /var/cache `** : Application cache data
+    - **` /var/lib `** : Variable state information
+    - **` /var/local `** : Variable data for /usr/local
+    - **` /var/lock `** : Lock files
+    - **` /var/log `** : Log files and directories
+    - **` /var/run `** : Data relevant to running processes
+    - **` /var/tmp `** : Temporary files preserved between reboots
     
 [back](#ls)
 
