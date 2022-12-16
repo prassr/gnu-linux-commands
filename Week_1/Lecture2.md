@@ -102,7 +102,7 @@ Desktop  Documents
 ```
 
 * Include hidden files while listing files. `.` is a prefix for hidden files.
-> ls -a <dirname>`
+	` ls -a <name> `
 ```terminal
 ~$ ls -a
 .            .cache         Documents                                   
@@ -112,7 +112,7 @@ Desktop  Documents
 ` . ` and ` .. ` are [special files](#filesystem-hierarchy-standard)
 
 * Lists the files and directories in [long listing format](#long-listing-format)
-> ls -l <filename>`
+	` ls -l <name> `
 ```terminal
 ~$ ls -l
 drwxrwxr-x 5 groot groot 21 Dec 12 18:52 Desktop  
@@ -120,7 +120,7 @@ drwxrwxr-x 2 groot groot  3 Nov 19 19:41 Desktop
 ```
 
 * Print the inode number. [More on inode](#types-of-links)
-> ` ls -i <file name> `
+	` ls -i <name> `
 ```terminal
 ~$ ls -i ~
 ```
@@ -174,6 +174,7 @@ drwxrwxrwx 5 groot groot 3488 Dec 15 10:57 Downloads
 [ back ](#simple-commands-overview)
 
 ### ` cd `
+	` cd <dirname> `
 * Without any argument or ` ~ ` as argument this commands makes user's home directory as working directory.
 ```terminal
 ~$ cd
@@ -193,7 +194,7 @@ bash: cd: OLDPWD not set
 [back](#cd_b)
 
 ### ` man `
-> ` man [option] command `
+	` man [option] command `
 * To see the man page for ` ls `.
 * Exit man page using `q`.
 ```terminal
@@ -202,7 +203,7 @@ bash: cd: OLDPWD not set
 
 * ` man ` takes numbers 1-9 as argument. These numbers denote [section](#man-page-sections). 
 * To see the first section of ` ls ` command.
-> ` man section command `
+	` man section command `
 ```terminal
 ~$ man 1 ls 
 ```
@@ -230,7 +231,6 @@ bash: cd: OLDPWD not set
 	2. the terminal associated with the process (tname=TTY)
 	3. the cumulated CPU time in [DD-]hh:mm:ss format (time=TIME)
 	4. the executable name (ucmd=CMD).  
-
 
 | ` command ` | options | Description |
 | :--------:  | :------:| ------------ | 
