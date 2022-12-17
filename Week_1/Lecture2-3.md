@@ -99,7 +99,7 @@ A command prompt can be empty.
     <td>Utility for date and time</td>
   </tr>
   <tr id="ncal-and-cal_b">
-    <td><strong><a href="#ncal-and-cal"><code>ncal</code> and <code>cal<code></a></strong></td>
+    <td><strong><a href="#ncal-and-cal"><code>ncal</code> and <code>cal</code></a></strong></td>
     <td>Utility for calendar</td>
   </tr>
   <tr id="free_b">
