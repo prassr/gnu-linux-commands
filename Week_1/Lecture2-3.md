@@ -58,6 +58,62 @@ A command prompt can be empty.
     <td><strong><code><a href="#ps">ps</a></code></strong></td>
     <td>The users currently running processes.</td>
    </tr>
+  <tr id="mkdir_b">
+    <td><strong><code><a href="#mkdir">mkdir</a></code></strong></td>
+    <td>Create directory or directories</td>
+   </tr>  
+  <tr id="chmod_b">
+    <td><strong><code><a href="#chmod">chmod</a></code></strong></td>
+    <td>Change permissions.</td>
+  </tr>
+ <tr id="touch_b">
+    <td><strong><code><a href="#touch">touch</a></code></strong></td>
+    <td>Create a file / modify timestamp.</td>
+  </tr>
+  <tr id="cp_b">
+    <td><strong><code><a href="#cp">cp</a></code></strong></td>
+    <td>Copy file(s)</td>
+  </tr>
+  <tr id="mv_b">
+    <td><strong><code><a href="#mv">mv</a></code></strong></td>
+    <td>Move file(s) / rename a file.</td>
+  </tr>
+  <tr id="rm_b">
+    <td><strong><code><a href="#rm">rm</a></code></strong></td>
+    <td>Remove a file.</td>
+  </tr>
+  <tr id="alias_b">
+    <td><strong><code><a href="#alias">alias</a></code></strong></td>
+    <td>Create alias for a command.</td>
+  </tr>
+  <tr id="whoami_b">
+    <td><strong><code><a href="#whoami">whoami</a></code></strong></td>
+    <td>Print current user name.</td>
+  </tr>
+  <tr id="less_b">
+    <td><strong><code><a href="#less">less</a></code></strong></td>
+    <td>View files page by page.</td>
+  </tr>
+  <tr id="date_b">
+    <td><strong><code><a href="#date">date</a></code></strong></td>
+    <td>Utility for date and time</td>
+  </tr>
+  <tr id="ncal-and-cal_b">
+    <td><strong><code><a href="#ncal-and-cal">` ncal ` and ` cal `</a></code></strong></td>
+    <td>Utility for calendar</td>
+  </tr>
+  <tr id="free_b">
+    <td><strong><code><a href="#free">free</a></code></strong></td>
+    <td>Memory statistics.</td>
+  </tr>
+  <tr id="groups_b">
+    <td><strong><code><a href="#groups">groups</a></code></strong></td>
+    <td>Groups to which user belongs.</td>
+  </tr>
+  <tr id="file_b">
+    <td><strong><code><a href="#file">file</a></code></strong></td>
+    <td>What type of file it is?</td>
+  </tr>
   <tr>
     <td><strong><code>clear</code></strong></td>
     <td>Clears the screen for whole session.  Not possible to navigate the screen by scrolling.</td>
@@ -65,10 +121,6 @@ A command prompt can be empty.
    <tr>
     <td><strong><code>exit</code></strong></td>
     <td>Exit shell/shell script.</td>
-   </tr>
-  <tr>
-    <td><strong><code></code></strong></td>
-    <td></td>
    </tr>
 </table>
 
@@ -111,7 +163,7 @@ drwxrwxr-x 5 groot groot 21 Dec 12 18:52 Desktop
 drwxrwxr-x 2 groot groot  3 Nov 19 19:41 Desktop
 ```
 
-* Print the inode number. [More on inode](#hard-links-and-soft-links)
+* Print the inode number. [More on inode](#hard-links)
 * ` ls -i <name> `
 ```terminal
 ~$ ls -i ~
@@ -124,7 +176,7 @@ drwxrwxr-x 2 groot groot  3 Nov 19 19:41 Desktop
 drwxrwxrwx 5 groot groot 3488 Dec 15 10:57 Downloads 
 ```
 * ` d ` : file type, ` d ` for directory. [More on file type](#file-types)
-* ` rwxrwxrwx ` : Owner, group and other permissions.
+* ` rwxrwxrwx ` : Owner, group and other permissions. [More](#file-permission-string)
 * ` 5 ` : number of hard links.
 * ` groot ` : Owner of the file.
 * ` groot ` : Group of the owner.
@@ -136,7 +188,7 @@ drwxrwxrwx 5 groot groot 3488 Dec 15 10:57 Downloads
 ### File Types
 * ` - ` : Regular file
 * ` d ` : Directory / Folder
-* ` l ` : Symbolic [link](#types-of-links)
+* ` l ` : Symbolic [link](#type-of-links)
 * ` c ` : Character file (e.g. terminal ` tty `)
 * ` b ` : Block file (e.g. Hard Disk (` sda `))
 * ` s ` : Socket file
@@ -165,7 +217,7 @@ drwxrwxrwx 5 groot groot 3488 Dec 15 10:57 Downloads
 | ` rw- ` | 6 |
 | ` rwx ` | 7 |
 
-[ back ](#simple-commands-overview)
+[ back ](#long-listing-format)
 
 ### ` cd `
 ` cd <dirname> `
@@ -244,6 +296,8 @@ bash: cd: OLDPWD not set
 ~$ mkdir level1 level2
 ```
 
+[back](#mkdir_b)
+
 ### ` chmod `
 * Change permissions of a file ( only owners of a file can change permissions. )
 * ` chmod MODE <file-name> `
@@ -267,6 +321,8 @@ bash: cd: OLDPWD not set
 ~$ chmod -o hello.txt
 ```
 
+[back](#chmod_b)
+
 ### ` touch `
 * Changes modified timestamp if the file exits.
 * otherwise creates a new file.
@@ -276,6 +332,8 @@ bash: cd: OLDPWD not set
 ~$ touch hello.py
 ```
 
+[back](#touch_b)
+
 ### ` cp `
 * Create a copy of a file
 * ` cp <source> <destination> ` : Copy a source file to destination file.
@@ -283,6 +341,8 @@ bash: cd: OLDPWD not set
 ```terminal
 ~$ cp hello.py greet.py
 ```
+
+[back](#cp_b)
 
 ### ` mv `
 * Rename or move a file.
@@ -302,6 +362,8 @@ bash: cd: OLDPWD not set
 ```
 * To refer to ` 'level 1' ` use quotes around it.
 
+[back](#mv_b)
+
 ### ` rm `
 * ` rm  <file> ` : Remove file or files.
 * Remove ` greetings.txt `
@@ -319,6 +381,8 @@ bash: cd: OLDPWD not set
 rm: remove directory 'level2'? n
 ```
 
+[back](#rm_b)
+
 ### ` alias `
 * ` alias ` : List all ` alias`ed commands.
 * ` alias command="aliasing command" ` : Add an alias for ` command ` command.
@@ -327,16 +391,12 @@ rm: remove directory 'level2'? n
 ~$ alias rm="rm -i"
 ```
 
-### Hard Links and Soft Links
-* inode number : An entry in the filesystem table about the location in the storage media.
-* Hard Links : 
-	- Files with same inode number. 
-	- Regular file has 1 hard link
-	- Second entry in long listing format
-		* number of hard links present for that file. 
+[back](#alias_b)
 
 ### ` whoami `
 * Prints name of the current user.
+
+[back](#whoami_b)
 
 ### ` less `
 * ` less filename ` : open file for reading.
@@ -346,12 +406,70 @@ rm: remove directory 'level2'? n
 ~$ less /var/log/alternatives.log
 ```
 
+[back](#less_b)
+
+### ` date `
+* ` date [option]... [+FORMAT] ` : Current date and time.
+* option ` -R ` : date and time RFC5322 standard format, used in email communications.
+```terminal
+~$ date
+Saturday 17 December 2022 01:58:49 PM EET
+~$ date -R
+Sat, 17 Dec 2022 13:59:05 +0200
+```
+
+[back](#date_b)
+
+### ` ncal ` and ` cal `
+* ` ncal [month] [year] ` : Displays calendar of current month by default.
+* Both belong to the same gnu utility ` ncal `, orientation is the only difference.
+* Print the calendar for November 2022.
+* ` month ` in long, short text (case-insensitive) or number (1-12, works only when year is specified.) format.
+* ` year ` in `YY` or `YYYY` format.
+* Display calendar for November, 2022
+```terminal
+~$ cal nov 2022
+```
+* or
+```terminal
+~$ ncal nov 2022
+```
+
+[back](#ncal-and-cal_b)
+
+#### ` free `
+* ` free [option]` : Displays memory information (memory and swap).
+* System utilizes swap memory when it runs out of memory (RAM).
+* Swap memory is part of hard disk.
+* option ` -h ` : human readable (typically Gi).
+```terminal
+~$ free *
+```
+
+[back](#free_b)
+
+### ` groups `
+* ` groups ` : Prints the group to which the current user belongs.
+* Group with the name of current user is also created for privacy.
+
+[back](#groups_b)
+
 ### ` file `
 * ` file <filename> ` : Prints the type of file.
 * Checking file type of ` znew `
 ```terminal
 ~$ file /usr/bin/znew
 ```
+
+[back](#file_b)
+
+### Hard Links
+* inode number : An entry in the filesystem table about the location in the storage media.
+* Hard Links : 
+	- Files with same inode number. 
+	- Regular file has 1 hard link
+	- Second entry in long listing format
+		* number of hard links present for that file. 
 
 ### ` man ` page sections
 
