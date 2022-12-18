@@ -278,6 +278,7 @@ Linux rich-linux 5.15.0-56-generic #62-Ubuntu SMP Tue Nov 22 19:54:14 UTC 2022 x
 	4. the executable name (ucmd=CMD). 
 	 
 ```terminal
+~$ ps
     PID TTY          TIME CMD
    4172 pts/0    00:00:00 bash
    4567 pts/0    00:00:00 ps
@@ -378,11 +379,11 @@ Linux rich-linux 5.15.0-56-generic #62-Ubuntu SMP Tue Nov 22 19:54:14 UTC 2022 x
 * ` rm -r <file>` : Delete a directory and it's contents recursively (` -r `).
 * Delete directory ` 'level 1' `.
 ```terminal
-~$ ` rm -r "level 1"`
+~$ rm -r "level 1"
 ```
 * ` rm -i <file>` : Ask before deletion. Interactive (` -i `). ((y/'') - yes, n - no)
 ```terminal
-~$ ` rm -ir level2 `
+~$ rm -ir level2
 rm: remove directory 'level2'? n
 ```
 
