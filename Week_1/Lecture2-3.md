@@ -126,10 +126,6 @@ A command prompt can be empty.
 
 ### Syntax
 ` root@localhost:~$ command [[options] [arguments]] `
-### Type of options
-1. UNIX options, which may be grouped and must be preceded by a dash.
-2. BSD options, which may be grouped and must not be used with a dash.
-3. GNU long options, which are preceded by two dashes.
 
 ### ` pwd `
 ```terminal
@@ -167,23 +163,24 @@ drwxrwxr-x 2 groot groot  3 Nov 19 19:41 Desktop
 * ` ls -i <name> `
 ```terminal
 ~$ ls -i ~
+260 Desktop 
+268 Documents
 ```
 
 [back](#ls_b)
 
 ### Long Listing Format
-```terminal
-drwxrwxrwx 5 groot groot 3488 Dec 15 10:57 Downloads 
-```
-* ` d ` : file type, ` d ` for directory. [More on file type](#file-types)
-* ` rwxrwxrwx ` : Owner, group and other permissions. [More](#file-permission-string)
-* ` 5 ` : number of hard links.
-* ` groot ` : Owner of the file.
-* ` groot ` : Group of the owner.
-* ` 3488 ` : Size of the file in Bytes.
-* ` Dec 15 10:57 ` : Last modified timestamp for file (considered here as separate columns).
-* ` Downloads ` : file name.
-* ( ` -> /storage/shared/Documents/ ` ) : Optional column for symbolic links.
+
+- ` drwxrwxrwx 5 groot groot 3488 Dec 15 10:57 Downloads `
+	* ` d ` : file type, ` d ` for directory. [More on file type](#file-types)
+	* ` rwxrwxrwx ` : Owner, group and other permissions. [More](#file-permission-string)
+	* ` 5 ` : number of hard links.
+	* ` groot ` : Owner of the file.
+	* ` groot ` : Group of the owner.
+	* ` 3488 ` : Size of the file in Bytes.
+	* ` Dec 15 10:57 ` : Last modified timestamp for file (considered here as separate columns).
+	* ` Downloads ` : file name.
+	* ( ` -> /storage/shared/Documents/ ` ) : Optional column for symbolic links.
 
 ### File Types
 * ` - ` : Regular file
@@ -260,11 +257,13 @@ bash: cd: OLDPWD not set
 * Prints the operating system name.
 ```terminal
 ~$ uname
+Linux
 ```
 
-* Prints the system information.
+* Print the system information.
 ```terminal
 ~$ uname -a
+Linux rich-linux 5.15.0-56-generic #62-Ubuntu SMP Tue Nov 22 19:54:14 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
 ```
 
 [back]($uname_b)
@@ -276,7 +275,13 @@ bash: cd: OLDPWD not set
 	1. the process ID (pid=PID)
 	2. the terminal associated with the process (tname=TTY)
 	3. the cumulated CPU time in [DD-]hh:mm:ss format (time=TIME)
-	4. the executable name (ucmd=CMD).  
+	4. the executable name (ucmd=CMD). 
+	 
+```terminal
+    PID TTY          TIME CMD
+   4172 pts/0    00:00:00 bash
+   4567 pts/0    00:00:00 ps
+```
 
 | ` command ` | options | Description |
 | :--------:  | :------:| ------------ | 
@@ -395,6 +400,10 @@ rm: remove directory 'level2'? n
 
 ### ` whoami `
 * Prints name of the current user.
+```
+~$ whoami
+groot
+```
 
 [back](#whoami_b)
 
@@ -428,10 +437,25 @@ Sat, 17 Dec 2022 13:59:05 +0200
 * Display calendar for November, 2022
 ```terminal
 ~$ cal nov 2022
+   November 2022      
+Su Mo Tu We Th Fr Sa  
+       1  2  3  4  5  
+ 6  7  8  9 10 11 12  
+13 14 15 16 17 18 19  
+20 21 22 23 24 25 26  
+27 28 29 30 
 ```
 * or
 ```terminal
 ~$ ncal nov 2022
+    November 2022     
+Su     6 13 20 27   
+Mo     7 14 21 28   
+Tu  1  8 15 22 29   
+We  2  9 16 23 30   
+Th  3 10 17 24      
+Fr  4 11 18 25      
+Sa  5 12 19 26
 ```
 
 [back](#ncal-and-cal_b)
@@ -442,7 +466,10 @@ Sat, 17 Dec 2022 13:59:05 +0200
 * Swap memory is part of hard disk.
 * option ` -h ` : human readable (typically Gi).
 ```terminal
-~$ free *
+~$ free -h
+               total        used        free      shared  buff/cache   available
+Mem:           1.9Gi       1.5Gi       101Mi       2.0Mi       279Mi       227Mi
+Swap:          1.4Gi        50Mi       1.3Gi
 ```
 
 [back](#free_b)
@@ -450,7 +477,10 @@ Sat, 17 Dec 2022 13:59:05 +0200
 ### ` groups `
 * ` groups ` : Prints the group to which the current user belongs.
 * Group with the name of current user is also created for privacy.
-
+```terminal
+~$ groups
+groot sudo
+```
 [back](#groups_b)
 
 ### ` file `
@@ -458,6 +488,7 @@ Sat, 17 Dec 2022 13:59:05 +0200
 * Checking file type of ` znew `
 ```terminal
 ~$ file /usr/bin/znew
+/usr/bin/znew: POSIX shell script, ASCII text executable
 ```
 
 [back](#file_b)
