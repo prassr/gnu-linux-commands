@@ -247,7 +247,7 @@ ll: command not found
 ```
 * Note
 	- Here the alias is not set for ` cp `, hence the command is not interactive.
-	- See the [man](/Week_1/Lecture2-3/#man "Explore man") command to figure out interactive option for ` cp `. 
+	- See the [` man `](/Week_1/Lecture2-3.md#man "Explore man") command to figure out interactive option for ` cp `. 
 
 * ` rmdir ` is not meant to handle non empty directories.
 ```
@@ -281,15 +281,15 @@ rmdir: failed to remove 'mydir': Directory not empty
 cp: -r not specified; omitting directory 'mydir'
 ~$ cp -r mydir mydir2
 ```
-	- Note that most commands tell you what to do.
-	- To take home, recursion is not assumed for ` cp `.
+* Note that most commands tell you what to do.
+* To take home, recursion is not assumed for ` cp `.
 
 * Let's check for ` mv `
 ```terminal
 ~$ mv mydir mydir3
 ```
-	- As you can see no error is generated.
-	- that means ` mydir ` is successfully renamed as ` mydir3 `
+* As you can see no error is generated.
+* That means ` mydir ` is successfully renamed as ` mydir3 `
 
 # Links
 ## ` ln `
@@ -317,7 +317,6 @@ lrwxrwxrwx 1 sanr sanr 5 Dec 19 08:28 file0 -> file1
 ### Hard Links
 * ` ln <source> <linkname> ` - Create hard link
 * We have already come across this in [Week 1](/Week_1/Lecture2-3.md#hard-links).
-* 
 * Let's take an example.
 * To create a hard link for ` file1 ` as ` file11 `
 ```terminal
@@ -390,9 +389,9 @@ Change: 2022-11-03 19:51:25.078671510 +0200
 * These file are just representaions, so file sizes it contains are zero.
 * Useful files
 	- ` cpuinfo ` - stores cpu information.
-	- ` version ` - stores system information, content similar to ` [uname](#/Week_1/Lecture2-3.md#uname) -a ` command.
-	- ` meminfo ` - Diagnostic information about memory. Check [free](/Week_1/Lecture2-3.md#free) command.
-	- ` partitions ` - Disk partition information. Check [df](#df)  
+	- ` version ` - stores system information, content similar to [`uname`](/Week_1/Lecture2-3.md#uname) -a ` command.
+	- ` meminfo ` - Diagnostic information about memory. Check [` free `](/Week_1/Lecture2-3.md#free) command.
+	- ` partitions ` - Disk partition information. Check [` df `](#df)  
 	- ` kcore ` - The astronomical size ( 2 ^ 47 bits)  tells the maximum virtual memory (47 bits) the current Linux OS is going to handle.
 * Directories named by ` number `
 	- Each of these correspond to running processes. 
@@ -414,8 +413,6 @@ VMware Virtual USB Mouse
 /sys/bus/usb/devices/2-1$ cat manufacturer
 ```
 * The VMWare is using its virtual USB mouse to connect the host machine mouse (touch pad) to the guest machine.
-
-
 * Thus, these two commands help us to explore hardware attached to the machine.
 
 
