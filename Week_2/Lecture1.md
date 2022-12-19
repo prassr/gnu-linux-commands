@@ -52,7 +52,7 @@ f1  f2
 79564 drwxrwxr-x 2 sanr sanr 4 Dec 18 17:06 level1
 ```
 
-* Short and long forms of [options](#types-of-options, "Types of Options")               
+* Short and long forms of [options](#types-of-options "Types of Options")               
 	- ` ls -a ` and ` ls --all ` are equivalent.
 	- Not all options have long form, eg. ` -l ` for ` ls `
 ```
@@ -62,7 +62,7 @@ f1  f2
 
 # Utilities for Knowing Files Better
 
-### [` less `](#/Week_1/Lecture2-3.md#less)
+### [` less `](/Week_1/Lecture2-3.md#less)
 
 ### ` cat `
 * ` cat <filename> ` : Dumps the file output on screen for reading.
@@ -115,7 +115,7 @@ f1  f2
 
 # Knowing More Commands
 
-### [` man `](#/Week_1/Lecture2-3.md#man)
+### [` man `](/Week_1/Lecture2-3.md#man)
 
 ### ` which `
 * ` which  <command> ` - Print the path of ` command `
@@ -201,7 +201,7 @@ ls is aliased to `ls --color=auto'
 ```
 * Note : commands displayed by ` help ` are all shell builtins. 
 
-### More on [` alias `](#/Week_1/Lecture2-3.md#alias)
+### More on [` alias `](/Week_1/Lecture2-3.md#alias)
 * To create alias for ` ls -l `
 ```terminal
 ~$ alias ll="ls -l"
@@ -247,7 +247,7 @@ ll: command not found
 ```
 * Note
 	- Here the alias is not set for ` cp `, hence the command is not interactive.
-	- See the [man](#/Week_1/Lecture2-3/#man "Explore man") command to figure out interactive option for ` cp `. 
+	- See the [man](/Week_1/Lecture2-3/#man "Explore man") command to figure out interactive option for ` cp `. 
 
 * ` rmdir ` is not meant to handle non empty directories.
 ```
@@ -316,7 +316,7 @@ lrwxrwxrwx 1 sanr sanr 5 Dec 19 08:28 file0 -> file1
 
 ### Hard Links
 * ` ln <source> <linkname> ` - Create hard link
-* We have already come across this in [Week 1](#/Week_1/Lecture2-3.md#hard-links).
+* We have already come across this in [Week 1](/Week_1/Lecture2-3.md#hard-links).
 * 
 * Let's take an example.
 * To create a hard link for ` file1 ` as ` file11 `
@@ -366,9 +366,9 @@ Change: 2022-11-03 19:51:25.078671510 +0200
 * To see the disk usage of ` znew ` file.
 ```terminal
 /usr/bin$ du znew
-5		znew
+5       znew
 /usr/bin$ du -h znew
-5.0K	znew
+5.0K    znew
 ```
 
 * Try to figure out the difference between output by ` stat ` and ` du `. 
@@ -384,14 +384,14 @@ Change: 2022-11-03 19:51:25.078671510 +0200
 * You can view these filesystems.
 * These are directory structures to know more about the system.
 
-## ` /proc`
+## ` /proc `
 * Older filesystem, but still useful.
 * Used to store different processes.
 * These file are just representaions, so file sizes it contains are zero.
 * Useful files
 	- ` cpuinfo ` - stores cpu information.
 	- ` version ` - stores system information, content similar to ` [uname](#/Week_1/Lecture2-3.md#uname) -a ` command.
-	- ` meminfo ` - Diagnostic information about memory. Check [free]((#/Week_1/Lecture2-3.md#free)) command.
+	- ` meminfo ` - Diagnostic information about memory. Check [free](/Week_1/Lecture2-3.md#free) command.
 	- ` partitions ` - Disk partition information. Check [df](#df)  
 	- ` kcore ` - The astronomical size ( 2 ^ 47 bits)  tells the maximum virtual memory (47 bits) the current Linux OS is going to handle.
 * Directories named by ` number `
