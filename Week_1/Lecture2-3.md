@@ -156,7 +156,7 @@ Desktop  Documents
 ```terminal
 ~$ ls -l
 drwxrwxr-x 5 groot groot 21 Dec 12 18:52 Desktop  
-drwxrwxr-x 2 groot groot  3 Nov 19 19:41 Desktop
+drwxrwxr-x 2 groot groot  3 Nov 19 19:41 Downloads
 ```
 
 * Print the inode number. [More on inode](#hard-links)
@@ -390,7 +390,7 @@ rm: remove directory 'level2'? n
 [back](#rm_b)
 
 ### ` alias `
-* ` alias ` : List all ` alias`ed commands.
+* ` alias ` : List all ` alias`ed commands. [More on ` alias `](#/Week_2/Lecture1.md#more-on-alias)
 * ` alias command="aliasing command" ` : Add an alias for ` command ` command.
 * Add ` alias ` for ` rm -i ` as ` rm ` command. 
 ```terminal
@@ -409,7 +409,7 @@ groot
 [back](#whoami_b)
 
 ### ` less `
-* ` less filename ` : open file for reading.
+* ` less <filename> ` : open file for reading.
 * Possible to ` scroll ` ` up ` or ` down ` through pages.
 * To read a log file do
 ```terminal
@@ -461,7 +461,7 @@ Sa  5 12 19 26
 
 [back](#ncal-and-cal_b)
 
-#### ` free `
+### ` free `
 * ` free [option]` : Displays memory information (memory and swap).
 * System utilizes swap memory when it runs out of memory (RAM).
 * Swap memory is part of hard disk.
@@ -494,7 +494,7 @@ groot sudo
 
 [back](#file_b)
 
-### Hard Links
+### [Hard Links](#/Week_2/Lecture_1.md#links, "More on links")
 * inode number : An entry in the filesystem table about the location in the storage media.
 * Hard Links : 
 	- Files with same inode number. 
