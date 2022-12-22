@@ -177,8 +177,12 @@ bash
 * Exit codes have values between ` 0 ` and ` 255 `.
 ### ` $? `
 ```
+~$ true
 ~$ echo $?
 0
+~$ false
+~$ echo $?
+1
 ```
 
 # Flags set in bash
