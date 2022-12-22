@@ -276,6 +276,9 @@ Linux rich-linux 5.15.0-56-generic #62-Ubuntu SMP Tue Nov 22 19:54:14 UTC 2022 x
 	2. the terminal associated with the process (tname=TTY)
 	3. the cumulated CPU time in [DD-]hh:mm:ss format (time=TIME)
 	4. the executable name (ucmd=CMD). 
+	- With options, other important columns include.
+	1. User id (UID)
+	2. Parent process ID
 	 
 ```terminal
 ~$ ps
@@ -287,7 +290,9 @@ Linux rich-linux 5.15.0-56-generic #62-Ubuntu SMP Tue Nov 22 19:54:14 UTC 2022 x
 | ` command ` | options | Description |
 | :--------:  | :------:| ------------ | 
 | ` ps `      |         | The user’s currently running processes |
+| ` ps `      |  ` --forest ` | Pictorial view of which process launched which process |
 | ` ps `      | ` -f `  | Full listing of the user’s currently running processes | 
+| ` ps `      | ` -e `  | Listing of all processes, except kerne processes | 
 | ` ps `      | ` -ef ` | Full listing of all processes, except kernel processes |
 | ` ps `      | ` -A `  | All processes, including kernel processes | 
 | ` ps `      | ` -Kf ` | Full listing of kernel processes |
