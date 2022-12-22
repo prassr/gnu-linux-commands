@@ -2,32 +2,72 @@
 * Creationm, inspection, modifictaion, lists...
 
 ## Creating a Variable
-* ` varname="value string" `
-	- Example: Create and display variable ` myvar ` with value ` 10 `
+* ` myvar="value string" `
+* Variable name can have mix of alpha-numeric chars and _. 
+	- ` myvar `, ` MyVar `, ` My10Var ` and ` MyVar_1 ` are valid
+* It does not start with a number.
+	- ` 10myvar ` is invalid
+* There are no spaces around ` = ` (assignment operator).
+	- ` myvar = 10 ` is invalid
+* A value can be number, string or a ` \` command \` ` (command substitution).
+* Safer to enclose string value within double quotes.
+* ` ${myvar} ` is more convenient for string concatenation than ` $myvar `
+### Examples
+* Create and display variable ` myvar ` with value ` 10 `
 ```terminal
 ~$ myvar=10
 ~$ echo $myvar
 10
 ```
-	- Example: Change value of variable ` myvar `
+* Change value of variable ` myvar `
 ```terminal
 ~$ myvar="hello world"
 ~$ echo $myvar
 hello world
 ```
-* Variable name can have mix of alpha-numeric chars and _. 
-* It name does not start with a number.
-* There are no spaces around `=` (assignment operator).
-* A value can be number, string or a ` ` command ` `.
-* Safer to enclose string value within double quotes.
+* Effect when value not within quotes.
+	- variable is assigned a value null
+```terminal
+~$ myvar=hello world
+Command 'world' not found.
+~$ echo $?
+127
+```
+
+* ` command ` as value of a variable. (` command ` is any valid command)
+	- store value of ` date ` in variable ` myvar `
+```terminal
+~$ mydate=` date ` 
+~$ echo $myvar
+Thursday 22 December 2022 12:23:07 PM EET
+~$ myvar=` echo Today is Thursday `
+Today is Thursday
+```
 
 
 ## Exporting a Variable
-* Make variable available within environment and to the subshell.
+* Make variable available to the subshell.
 * It can be done in following ways
 	- ` export myvar="value string" `
 	- ` myvar="value string" `
 	  ` export myvar `
+### Examples
+* By default variable is not available for child shell
+```terminal
+~$ myvar=3.14
+~$ bash
+~$ echo $myvar
+
+```
+* Make the variable available in child shell
+	- Changing the value of variable in child shell does not affect it's value in parent shell
+```terminal
+~$ export myvar=3.14
+~$ bash
+~$ echo $myvar
+3.14
+```
+
 
 
 ## Using Variable Values
@@ -35,14 +75,39 @@ hello world
 	- ` echo $myvar `
 	- ` echo ${myvar}`
 	- ` echo "${myvar}_something" `
+### Example
+* Accessing variable as ` ${myvar} ` and without ` $myvar `
+	- As noted above ` _ ` can be part of variable name.
+```terminal
+~$ myvar=FileName
+~$ echo "$myvar.txt"
+FileName.txt
+~$ echo "$myvar_txt"
+
+~$ echo ${myvar}_txt
+FileName_txt
+```
+
 
 ## Removing a Variable
 * Delete the variable.
 	- ` unset myvar `
+* Example
+```terminal
+~$ unset myvar
+~$ echo $myvar
+
+```
 ## Removing Value of a Variable
 * Set the value of variable as 	` null `
 	- ` myvar= `
-	
+* Example
+```terminal
+~$ myvar=
+~$ echo $myvar
+
+```
+
 ## Test if a Variable is Set
 ```bash
 [[ -v myvar ]];
@@ -51,6 +116,17 @@ echo $?
 * Return codes:
 	- ` 0 ` : success (variable ` myvar ` is set)
 	- ` 1 ` : failure (variable ` myvar ` is not set) 
+* Example
+```terminal
+~$ myvar=
+~$ [[ -v myvar ]];
+~$ echo $?
+1
+~$ myvar=10
+~$ [[ -v myvar ]];
+~$ echo $?
+0
+```
 
 ## Test if a Variable is *Not* Set
 ```bash
@@ -62,19 +138,44 @@ echo $?
 * Return codes:
 	- ` 0 ` : success (variable ` myvar ` is not set)
 	- ` 1 ` : failure (variable ` myvar ` is set) 
-
+* Example
+```terminal
+~$ unset myvar
+~$ [[ -z myvar ]];
+~$ echo $?
+0
+~$ myvar=10
+~$ [[ -v myvar ]];
+~$ echo $?
+1
+```
 
 ## Substitute Default Value
-* If the variable ` myvar ` is not set, use ` "default" ` as its default value.
+* If the variable ` myvar ` is not set (` :- `), use ` "default" ` as temporary value.
 ```bash
 echo ${myvar:-"default"}
 ```
 * There are no spaces around ` :- `
 * Pseudocode : 
 > if ` myvar ` is set:
+>
 > 	display its value
+>
 > else:
+>
 > 	display "default"
+### Examples
+```terminal
+~$ myvar=
+~$ echo ${myvar:-hello}
+hello
+~$ echo ${myvar:-"myvar is not set"}
+myvar is not set
+~$ echo ${myvar}
+
+```
+
+## Set Default Value
 
 * If the variable ` myvar ` is *not* set, then set ` "default" ` as it's value.
 ```bash
@@ -83,23 +184,65 @@ echo ${myvar:="default"}
 * There are no spaces around ` := `
 * Pseudocode : 
 > if ` myvar ` is set:
+>
 > 	display its value
+>
 > else:
+>
 > 	set "default" as its value
+>
 > 	display its new value
-	
+
+### Examples
+```terminal
+~$ myvar=
+~$ echo ${myvar:=hello}
+hello
+~$ echo ${myvar:=HELLO}
+hello
+~$ echo ${myvar}
+hello
+```
+
 ## Reset Value if Variable is Set
-* If the variable ` myvar ` is set, then set "default" as its value.
+* If the variable ` myvar ` is set, then set "default" as its temporary value.
 ```bash
 echo ${myvar:+"default"}
 ```
 * There are no spaces around ` :+ `
 * Pseudocode : 
 > if ` myvar ` is set:
+>
 > 	set "default" as its value
+>
 > 	display its new value	
+>
 > else:
+>
 > 	display its value
+
+### Example
+```
+~$ myvar=apple
+~$ echo ${myvar:+APPLE}
+APPLE
+~$ unset myvar
+echo ${myvar:+APPLE}
+
+```
+
+
+## User Defined Error Message (Alert)
+* Display user defined error when variable is not set.
+```bash
+echo ${myvar:?"myvar is not set"}
+```
+### Example
+```
+~$ unset myvar
+~$ echo ${myvar:?"myvar is not set"}
+bash: myvar: myvar is not set
+```
 
 ## List of Variable Names
 * List of names of shell variables that start with ` H `
