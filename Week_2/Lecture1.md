@@ -52,7 +52,7 @@ f1  f2
 79564 drwxrwxr-x 2 sanr sanr 4 Dec 18 17:06 level1
 ```
 
-* Short and long forms of [options](#types-of-options "Types of Options")               
+* Short and long forms of [options](#type-of-options "Types of Options")               
 	- ` ls -a ` and ` ls --all ` are equivalent.
 	- Not all options have long form, eg. ` -l ` for ` ls `
 ```
@@ -420,75 +420,3 @@ VMware Virtual USB Mouse
 1. UNIX options, which may be grouped and must be preceded by a dash.
 2. BSD options, which may be grouped and must not be used with a dash.
 3. GNU long options, which are preceded by two dashes.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
