@@ -49,7 +49,7 @@ Today is Thursday
 * Make variable available to the subshell.
 * It can be done in following ways
 	- ` export myvar="value string" `
-	- ` myvar="value string" `
+	- ` myvar="value string" ;`
 	  ` export myvar `
 ### Examples
 * By default variable is not available for child shell
@@ -184,8 +184,11 @@ echo ${myvar:="default"}
 * There are no spaces around ` := `
 * Pseudocode : 
 > if ` myvar ` is set:
+>
 > > display its value
+>
 > else:
+>
 > >	set "default" as its value
 > 	display its new value
 
