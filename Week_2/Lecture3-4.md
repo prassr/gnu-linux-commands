@@ -154,13 +154,10 @@ echo ${myvar:-"default"}
 ```
 * There are no spaces around ` :- `
 * Pseudocode : 
-> if ` myvar ` is set:
->
-> >	display its value
->
-> else:
->
-> >	display "default"
+> if ` myvar ` is set:                                                    
+> >	display its value                                                      
+> else:                                                                    
+> >	display "default"                                                    
 ### Examples
 ```terminal
 ~$ myvar=
@@ -180,15 +177,11 @@ echo ${myvar:="default"}
 ```
 * There are no spaces around ` := `
 * Pseudocode : 
-> if ` myvar ` is set:
->
-> > display its value
->
-> else:
->
-> >	set "default" as its value
-> >
-> >	display its new value
+> if ` myvar ` is set:                                          
+> > display its value                                          
+> else:                                                 
+> >	set "default" as its value                                                      
+> >	display its new value                                              
 
 ### Examples
 ```terminal
@@ -208,15 +201,11 @@ echo ${myvar:+"default"}
 ```
 * There are no spaces around ` :+ `
 * Pseudocode : 
-> if ` myvar ` is set:
->
-> >	set "default" as its value
-> >
-> >	display its new value	
->
-> else:
->
-> >	display its value
+> if ` myvar ` is set:                                                 
+> >	set "default" as its value                                        
+> >	display its new value                                          	
+> else:                                                            
+> >	display its value                                               
 
 ### Example
 ```
