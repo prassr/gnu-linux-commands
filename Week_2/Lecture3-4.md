@@ -68,8 +68,6 @@ Today is Thursday
 3.14
 ```
 
-
-
 ## Using Variable Values
 * Refering by variable name using ` $ `.
 	- ` echo $myvar `
@@ -87,7 +85,6 @@ FileName.txt
 ~$ echo ${myvar}_txt
 FileName_txt
 ```
-
 
 ## Removing a Variable
 * Delete the variable.
@@ -190,7 +187,8 @@ echo ${myvar:="default"}
 > else:
 >
 > >	set "default" as its value
-> 	display its new value
+> >
+> >	display its new value
 
 ### Examples
 ```terminal
@@ -213,8 +211,8 @@ echo ${myvar:+"default"}
 > if ` myvar ` is set:
 >
 > >	set "default" as its value
->
-> 	display its new value	
+> >
+> >	display its new value	
 >
 > else:
 >
