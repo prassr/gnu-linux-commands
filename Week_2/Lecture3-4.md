@@ -159,11 +159,11 @@ echo ${myvar:-"default"}
 * Pseudocode : 
 > if ` myvar ` is set:
 >
-> 	display its value
+> >	display its value
 >
 > else:
 >
-> 	display "default"
+> >	display "default"
 ### Examples
 ```terminal
 ~$ myvar=
@@ -184,13 +184,9 @@ echo ${myvar:="default"}
 * There are no spaces around ` := `
 * Pseudocode : 
 > if ` myvar ` is set:
->
-> 	display its value
->
+> > display its value
 > else:
->
-> 	set "default" as its value
->
+> >	set "default" as its value
 > 	display its new value
 
 ### Examples
@@ -213,13 +209,13 @@ echo ${myvar:+"default"}
 * Pseudocode : 
 > if ` myvar ` is set:
 >
-> 	set "default" as its value
+> >	set "default" as its value
 >
 > 	display its new value	
 >
 > else:
 >
-> 	display its value
+> >	display its value
 
 ### Example
 ```
@@ -245,41 +241,107 @@ bash: myvar: myvar is not set
 ```
 
 ## List of Variable Names
-* List of names of shell variables that start with ` H `
+* Print the environment variable names matching *init_chars*.
+* We can access these variables using the methods we have seen already.
+```bash
+echo ${!init_chars*}
+```
+### Example 
+- List of names of shell variables that start with ` H ` and ` HI `.
 ```bash
 ~$ echo ${!H*}
 HISTCMD HISTCONTROL HISTFILE HISTFILESIZE HISTSIZE HOME HOSTNAME HOSTTYPE
+~$ echo ${!HI*}
+HISTCMD HISTCONTROL HISTFILE HISTFILESIZE HISTSIZE
+~$ echo ${HISTFILE}
+/home/groot/.bash_history
 ```
 
 ## Length of String Value
 * Display length of the string value of the variable ` myvar `.
-* If ` myvar ` is not set, display ` 0 `
+* If ` myvar ` is not set, display ` 0 `.
 ```bash
 echo ${#myvar}
+```
+### Example 
+- Getting length of string returned by ` date ` command stored in a variable.
+```terminal
+~$ mydate=` date `
+~$ echo ${mydate}
+Thursday 22 December 2022 04:50:31 PM EET
+~$ echo ${#mydate}
+41
+~$ myvar=
+~$ echo ${#myvar}
+0
 ```
 
 ## String Operations
 ### Slice of String Value
-* Provide *offset* and *slice_length* are separated by ` : `.
+* Provide *offset* and *slice_length* separated by ` : `.
 * ` ${varname:offset:slice_length} `
 * Display *4 chars* of the string valur of the variable ` myvar ` skipping first *5 chars*.
 * If *slice_length > ${#varname}*, *slice_length = ${#varname}*.
-* If offset is negative.
+* Offset value can be negative.
 ```bash
 echo ${myvar:5:4}
+```
+#### Examples
+* Extract part of string by using offset from the beginning.
+```terminal
+~$ myvar=abcdefgh12345678
+~$ echo ${myvar:3:3}
+def
+~$ echo ${mydate:0:6}
+Sunday
+```
+
+* Extract part of string by using offset from the end.
+	- notice ` <space> ` between operator ` : ` and ` - ` sign.
+```terminal
+~$ myvar=abcdefgh12345678
+~$ echo ${myvar: -3:3}
+678
+~$ echo ${mydate: -3:2}
+68
+```
+
+* Using command and variable to obtain the same result. 
+```terminal
+~$ date
+Thursday 22 December 2022 05:10:53 PM EET
+~$ date +"%d %B %Y"
+22 December 2022
+~$ mydate=` date `
+$ echo ${mydate:9:16}
+22 December 2022
 ```
 
 ### Remove Prefix Matching a Pattern 
 * Match the string from the beginning.
 * Pattern is regex (later)
-* ` . ` matches single character, ` * ` matches any number of characters.
+* ` * ` matches any number of characters.
 * Match once using ` # `
 ```bash
 echo ${myvar#pattern}
 ```
+
+```terminal
+~$ myvar=MyFile.tar.gz
+~$ echo ${myvar#*.}
+tar.gz
+~$ echo ${myvar#*.*.}
+gz
+```
 * Match max possible using ` ## `
 ```bash
 echo ${myvar##pattern}
+```
+
+```terminal
+~$ myvar=MyFile.tar.gz
+~$ echo ${myvar##*.}
+gz
 ```
 
 ### Remove Suffix Matching a Pattern
@@ -288,9 +350,27 @@ echo ${myvar##pattern}
 ```bash
 echo ${myvar%pattern}
 ```
+
+```terminal
+~$ myvar=MyFile.tar.gz
+~$ echo ${myvar%.*}
+MyFile.tar
+~$ echo ${myvar%.*.*}
+MyFile
+```
+
 * Match max possible using ` %% `
 ```bash
 echo ${myvar%%pattern}
+```
+```terminal
+~$ myvar=MyFile.tar.gz
+~$ echo ${myvar%%.*}
+MyFile
+~$ echo ${myvar%%.*}.${myvar##*.}
+MyFile.gz
+~$ echo ${myvar%%.*}.zip
+MyFile.zip
 ```
 
 ### Replace Matching Pattern
@@ -300,9 +380,27 @@ echo ${myvar%%pattern}
 ```bash
 echo ${myvar/pattern/string}
 ```
+* Example 1 - Change only first occurence of *pattern* with **string**
+```terminal
+~$ myvar=MyFile.SomeThing.jpeg
+~$ echo ${myvar/e/E}
+MyFilE.SomeThing.jpeg
+```
+
 * Match *pattern* max possible (` // `) and replce with **string**.
 ```bash
 echo ${myvar//pattern/string}
+```
+
+```terminal
+~$ echo ${myvar//e/E}
+MyFilE.SomEThing.jpEg
+~$ myvar=MyjpegFile.Something.jpeg
+~$ echo ${myvar//jpeg/jpg}
+MyjpgFile.Something.jpg
+~$ myfname=` echo ${myvar//jpeg/jpg} `
+~$ echo $newfname
+MyjpgFile.Something.jpg
 ```
 
 ### Replace Matching Pattern by Location
@@ -311,10 +409,25 @@ echo ${myvar//pattern/string}
 ```bash
 echo ${myvar/#pattern/string}
 ```
+
+```terminal
+~$ echo ${myvar/#M/m}
+myFile.SomeThing.jpeg
+~$ mydate=`date`
+~$ newdate=` echo ${mydate/#*day }`
+~$ echo $newdate
+22 December 2022 05:10:53 PM EET
+```
+
 * Match and replace the suffix (` /% `)
 	- match at the *end*
 ```bash
 echo ${myvar/%pattern/string}
+```
+
+```terminal
+~$ echo ${myvar/%jpeg/jpg}
+MyFile.SomeThing.jpg
 ```
 
 ### Changing Case to Lower Case
@@ -322,11 +435,23 @@ echo ${myvar/%pattern/string}
 * Changes only view and not the value.
 * Change first character to lower case using ` , `
 ```bash
-echo ${#myvar,}
+echo ${myvar,}
 ```
+
+```terminal
+~$ mymonth="MARGALI"
+~$ echo ${mymonth,}
+mARGALI
+```
+
+
 * Change all character to lower case using ` ,, `
 ```bash
-echo ${#myvar,,}
+echo ${myvar,,}
+```
+```terminal
+~$ echo ${mymonth,,}
+margali
 ```
 
 ### Changing Case to Upper Case
@@ -334,13 +459,26 @@ echo ${#myvar,,}
 * Changes only view and not the value.
 * Change first character to Upper case using ` ^ `
 ```bash
-echo ${#myvar^}
+echo ${myvar^}
 ```
+
+```terminal
+~$ mymonth="margali"
+~$ echo ${mymonth^}
+Margali
+```
+
 * Change all character to UPPER case using ` ^^ `
 ```bash
-echo ${#myvar^^}
+echo ${myvar^^}
 ```
-	
+
+```terminal
+~$ mymonth="margali"
+~$ echo ${mymonth^^}
+MARGALI
+```
+
 ## Set or Unset Attributes on  Value Types
 * Attributes are some restrictions.
 * ` declare [option] varname `
@@ -351,64 +489,179 @@ echo ${#myvar^^}
 ```bash
 declare -i myvar
 ```
+
+```terminal
+~$ declare -i mynum=1729
+~$ echo $mynum
+1729
+~$ mynum="hello world"
+~$ echo $mynum
+0
+```
+
 * ` +i ` : Remove integer attribute/restriction
 ```bash
 declare +i myvar
 ```
+
+```terminal
+~$ declare +i mynum
+~$ mynum="hello world"
+~$ echo $mynum
+hello world
+```
+
 * ` -l ` : Convert value to lower case on assignment.
 ```bash
 declare -l myvar
 ```
+
+```terminal
+~$ declare -l myvar="HELLO WORLD"
+~$ echo ${myvar}
+hello world
+```
+
 * ` +l ` : Remove lower case restriction.
 ```bash
 declare +l myvar
 ```
+
 *  ` -u ` : Convert value to upper case on assignment.
 ```bash
 declare -u myvar
 ```
+
+```terminal
+~$ declare -u MYVAR="hello world"
+~$ echo ${MYVAR}
+HELLO WORLD
+```
+
 *  ` +u ` : Remove upper case restriction.
 ```bash
 declare +u myvar
 ```
+
 * ` -r ` : Make the variable read only. ` + ` can not be used to remove this attribute.
 ```bash
 declare -r myvar
 ```
 
+```terminal
+~$ declare -r PI=3.142
+~$ echo $PI
+3.142
+~$ PI=2.142
+bash: PI: readonly variable
+~$ declare +r PI
+bash: declare: PI: readonly variable
+```
+
 ## Indexed Arrays
-* Declare an indexed array ` arr ` using ` -a `
+* Declare an indexed array ` arr ` using ` -a ` 
 ```bash
 declare -a arr
 ```
-### Indexed Array Operations
-* set value of element with index 0 in the array.
-```bash
-$arr[0]="value"
+
+```terminal
+~$ declare -a arr
 ```
+
+### Indexed Array Operations
+* Set value of element with some index in the array.
+```bash
+arr[0]="value"
+```
+```terminal
+~$ arr[0]=Sunday
+~$ arr[1]=Monday
+```
+
 * Access value of element with index 0 in the array.
 ```bash
 echo ${arr[0]}
 ```
+
+```terminal
+~$ echo ${arr[0]}
+Sunday
+~$ echo $arr
+Sunday
+~$ 
+```
+
 * Number of elements in the array (` @ ` : all elements).
 ```bash
 echo ${#arr[@]}
 ```
+```terminal
+~$ echo ${#arr[@]}
+2
+```
+
 * Display all indices used. (Indices in bash array can be sparse.)
 ```bash
 echo ${!arr[@]}
 ```
+
+```terminal
+~$ echo ${!arr[@]}
+0 1
+```
+
 * Diplay values of all elements in the array.
 ```bash
 echo ${arr[@]}
 ```
-* Delete element with index 2 in the array
-```bash
-unset 'arr[2]'
+
+```terminal
+~$ echo ${arr[@]}
+Sunday Monday
 ```
+
+* Array indices are sparse
+	- indices are sorted in natural order.
+```terminal
+~$ arr[100]=NotToBeDay
+~$ echo ${arr[@]}
+Sunday Monday NotToBeDay
+$ echo ${!arr[@]}
+0 1 100
+```
+
+* Delete element with index 100 in the array
+```bash
+unset 'arr[100]'
+```
+
+```terminal
+~$ unset 'arr[100]'
+~$ echo ${arr[@]}
+Sunday Monday
+```
+
 * Append an element with a value to the end of the array.
+	- Multiple elements can be separated with space
 ```bash
 arr+=("value")
+```
+
+```terminal
+~$ arr+=(Tuesday)
+~$ echo ${arr[@]}
+Sunday Monday Tuesday
+```
+
+* Array declaration and initialization
+	- ` <space> ` as separator.
+	- indices start with 0
+```terminal
+~$ declare -a weekdays=(Sunday Monday Tuesday Wednesday Thursday Friday Saturday)
+~$ echo ${!weekdays[@]}
+0 1 2 3 4 5 6
+~$ echo ${weekdays[@]}
+Sunday Monday Tuesday Wednesday Thursday Friday Saturday
 ```
 
 ## Associative Arrays
@@ -416,72 +669,69 @@ arr+=("value")
 ```bash
 declare -A hash
 ```
+
+```terminal
+~$ declare -A hash
+```
+
 ### Associative Arrays Operations
 * set value of element with index ` "a" ` in the array.
 ```bash
 $hash["a"]="value"
 ```
+```terminal
+~$ hash[0]="Amul"
+~$ hash[1]="Gokul"
+~$ hash["city"]="Madras"
+```
+
 * Access value of element with index ` "a" ` in the array.
 ```bash
 echo ${hash["a"]}
+```
+```terminal
+~$ echo ${hash["city"]}
+Madras
 ```
 * Number of elements in the array (` @ ` : all elements).
 ```bash
 echo ${#hash[@]}
 ```
+
+```terminal
+~$ echo ${#hash[@]}
+3
+```
+
 * Display all indices used. (Indices in bash array can be sparse.)
 ```bash
 echo ${!hash[@]}
 ```
+
+```terminal
+~$ echo ${!hash[@]}
+0 1 city
+```
+
 * Diplay values of all elements in the array.
 ```bash
 echo ${hash[@]}
 ```
+
+```terminal
+~$ echo ${hash[@]}
+Amul Gokul Madras
+```
+
 * Delete element with index ` "a" ` in the array
 ```bash
 unset 'hash["a"]'
 ```
 
+```terminal
+~$ unset 'hash["city"]'
+~$ echo ${hash[@]}
+Amul Gokul
+```
+
 Shell Variable Manipulations are FAST!	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
