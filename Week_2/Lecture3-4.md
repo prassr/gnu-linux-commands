@@ -77,7 +77,7 @@ Today is Thursday
 	- ` echo "${myvar}_something" `
 ### Example
 * Accessing variable as ` ${myvar} ` and without ` $myvar `
-	- As noted above ` _ ` can be part of variable name.
+	- As stated above ` _ ` can be part of variable name.
 ```terminal
 ~$ myvar=FileName
 ~$ echo "$myvar.txt"
@@ -666,6 +666,12 @@ Sunday Monday Tuesday
 0 1 2 3 4 5 6
 ~$ echo ${weekdays[@]}
 Sunday Monday Tuesday Wednesday Thursday Friday Saturday
+```
+
+* ` ls ` command output into array
+```terminal
+~$ declare -a arr
+~$ arr=(` ls `)
 ```
 
 ## Associative Arrays
