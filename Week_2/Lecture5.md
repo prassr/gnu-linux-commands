@@ -152,7 +152,7 @@ Very big output.
 
 * If the process in some other shell is killed using ` kill -9 ` command, then the error code is ` 137 ` 
 
-Terminal 1 : Synchronous output of ` top ` command	
+Terminal 1 : Iterative output of ` top ` command	
 ```terminal
 ~$ top
 ```
