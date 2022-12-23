@@ -190,6 +190,7 @@ echo ${myvar:="default"}
 > else:
 >
 > >	set "default" as its value
+> >
 > >	display its new value
 
 ### Examples
