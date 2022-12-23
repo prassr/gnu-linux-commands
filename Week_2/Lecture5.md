@@ -151,6 +151,7 @@ Very big output.
 ```
 
 * If the process in some other shell is killed using ` kill -9 ` command, then the error code is ` 137 ` 
+
 Terminal 1 : Synchronous output of ` top ` command	
 ```terminal
 ~$ top
@@ -193,7 +194,7 @@ himBHs
 * Let's run a command to check if there can be less number of flags.
 	- ` bash ` : spawn a subshell
 	- ` -c `  : consider first non-option argument as command
-	- ` \ ` : escape character to stop early interpretation ` $- `
+	- ` \ ` : escape character to stop early interpretation of ` $- `
 ```terminal
 ~$ bash -c "echo \$-"
 hBc
