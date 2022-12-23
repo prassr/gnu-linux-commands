@@ -151,28 +151,27 @@ bash
 3423
 ```
 
-# [Process Control](/Week_2/Lecture4.md "Linux Process Management")
-### ` & `
+# [Process Control](/Week_2/Lecture5.md "Linux Process Management")
+### [` & `](/Week_2/Lecture5.md#&)
 * Use to run a program in the background.
-### ` fg `
+### [` fg `](/Week_2/Lecture5.md#fg)
 * Bring the program to the foreground.
-### ` corpoc `
+### [` coproc `](/Week_2/Lecture5.md#coproc)
 * Run a program while also being able to use the shell.
-### ` jobs `
+### [` jobs `](/Week_2/Lecture5.md#jobs)
 * List all background jobs.
-### ` top `
+### [` top `](/Week_2/Lecture5.md#top)
 * Live view of all running processes.
-### ` kill `
+### [` kill `](/Week_2/Lecture5.md#kill)
 * Kill running/stopped process or processes.
 
-# Program Exit Codes
-
+# [Program Exit Codes](/Week_2/Lecture5.md#more-on-program-exit-codes)
 * ` 0 ` - success
 * ` 1 ` - failure
 * ` 2 ` - misuse of shell builtins when the permissions are not adequate
 * ` 126 ` - command can not be executed
 * ` 127 ` - command not found
-* ` 130 ` - processes killed using ` ctrl + C `
+* ` 130 ` - processes killed using ` ctrl + C ` or ` ^C `
 * ` 137 ` - processes killed using ` kill -9 <pid> `
 * Exit codes have values between ` 0 ` and ` 255 `.
 ### ` $? `
@@ -185,7 +184,7 @@ bash
 1
 ```
 
-# Flags set in bash
+# [Flags set in bash](/Week_2/Lecture5.md#more-on-flags-set-in-bash)
 * ` h ` - locate and hash commands
 * ` B ` - brace expansion enabled
 * ` i ` - interactive mode
@@ -195,8 +194,5 @@ bash
 * ` c ` - commands are read from arguments
 ` echo $- `
 
-### ` $- `
-```
-~$ echo $-
-himBHs
-```
+
+
