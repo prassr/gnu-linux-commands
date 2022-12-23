@@ -85,11 +85,11 @@ kill -9 <process id>
 ```
 
 ## ` $! `
-* It's an environment variable which stores the last ` PID ` of last process that is run in background.
+* It's an environment variable which stores the ` PID ` of the last process that is running/has run in the background.
 * The value persits even if the process is finished.
 
 
-# More on Program Exit Codes
+# More on [Program Exit Codes](/Week_2/Lecture2.md#program-exit-codes)
 
 *  If a command is run successfully then error code is ` 0 `.
 ```
