@@ -119,9 +119,11 @@ Since, we are using Ubuntu OS, we should get familiar with *Debian* package type
 * ` apt-cache` ` show [-a] ` `package `
 	- Display package records of a ` package `
 	- To see the details of package ` nmap `
+		
 		```bash
 		apt-cache show nmap
 		```
+		
 		+ [Sample Output](/Week-2/examples/nmap_show.txt)
 		+ Filename: pool/universe/n/nmap/*nmap_7.91+dfsg1+really7.80+dfsg1-2build1_amd64.deb*
 		+ The text in italic has foramt that signifies special information, that can be seen [here](#package-names)
@@ -132,6 +134,7 @@ Since, we are using Ubuntu OS, we should get familiar with *Debian* package type
 		+ The priority of ` nmap ` is extra. See [Priorities](#package-priorities "Package Priorities")
 		+ *Section: universe/net* means that the package comes uder network utility. See [Sections](#package-sections)
 	- Try commands below in terminal
+	
 		```bash
 		apt-cache show wget
 		```
@@ -185,12 +188,15 @@ about installing a package based on priority.
 md5sum [filename]
 ```
 * It gives *128 bit* checksum string irrespective of size of file.
-		```
+		
+		```terminal
 		~$ md5sum nmap_show.txt
 		2717ed2e8f6dd4a63a20c0317d695161  nmap_show.txt
 		```
+		
 * When no input file is given, it reads the standard input (` - ` is the default filename for ` stdin `).
 	+ Write text and hit <ctrl+D>.
+		
 		```terminal
 		~$ md5sum
 		Overflow on /dev/null, please empty the bit bucket.
@@ -199,12 +205,14 @@ md5sum [filename]
 		Overglow on /dev/null, please empty the bit bucket.
 		ea16952d936440cdddcb1a68cdbb7295  -
 		```
+		
 ### ` sha1sum `
 ```bash
 sha1sum [filename]
 ```
 * It gives *160 bit* SHA1 checksum string.
 * We will read the standard input, on same string given in [` md5sum `](#md5sum).
+		
 		```terminal
 		~$ sha1sum
 		Overflow on /dev/null, please empty the bit bucket.
@@ -213,6 +221,7 @@ sha1sum [filename]
 		Overglow on /dev/null, please empty the bit bucket.
 		b52111e02999a26af3ebb2cdef7f0893dbbb92b1  -
 		```
+		
 	- Try this command with filename on any file you wish.
 ### ` sha256sum `
 ```bash
@@ -220,6 +229,7 @@ sha256sum [filename]
 ```
 * It gives *256 bit* SHA256 checksum string.
 * We will read the standard input, on same string given in [` md5sum `](#md5sum).
+		
 		```terminal
 		~$ sha256sum
 		Overflow on /dev/null, please empty the bit bucket.
@@ -228,6 +238,7 @@ sha256sum [filename]
 		Overglow on /dev/null, please empty the bit bucket.
 		e2919763cc71cd324d29f96483c7f46eb3d6b64ab17ce3448aaca4da9b2e5b39  -
 		```
+		
 	- Try this command with filename on any file you wish.
 
 
@@ -248,11 +259,11 @@ Only administrators called sudoers can install / upgrade / remove packages.
 		guest is not in the sudoers file. This incident will be reported.
 		```
 		+ When we run the command ` sudo cat /etc/sudoers ` it asks for password.
-		+ For wrong password, the password string is asked again.
+		+ For wrong password, the password is asked again.
 		+ If the passwrod is correct, but the user is not listed in the file, it will notify in and report the login attempt to administrator.
 		+ If ` $USER ` is listed in ` /etc/sudoers `, the file content will be dumped on screen for right password.
 	- The failure if any is recorded in `/var/log/auth.log ` file.
-	- To open this file you need to be a super user.
+	- To open this file you should have super user privilege.
 	- The file lists timestamps and corresponding session details.
 
 ## Which website is used to download packages?
@@ -305,22 +316,25 @@ The details of websites are given in the following hierarchy.
 		
 * ` reinstall ` : It is used to download and install the new version of the package.
 	- To reinstall *fortunes* package.
+		
 		```bash
 		sudo apt-get reinstall fortunes 
 		```
 		
 ### Removing or Cleaning up Packages
 * ` autoremove ` : Remove packages that were automatically installed to satisfy a dependency and not needed.
+
 		```bash
 		sudo apt autoremove
 		``` 
 	- By removing these packages you can free some space.
 
 * ` clean ` : Clean local repository of retrieved packages.
-		` apt-get clean `
+	- ` apt-get clean `
 	- Usually, we may want to revert back to a particular version of a package, it may be ok to keep the retrieved package files.
 
 * ` remove ` : This option is used to remove a particular package
+		
 		```bash
 		sudo apt-get remove fortunes fortune-mod
 		```
@@ -328,9 +342,10 @@ The details of websites are given in the following hierarchy.
 	- fortune-mod contains fortune cookies, hence it also needs to be removed.
 
 * ` purge ` : Purge package files from the system.
+	- ` apt-get purge pkgname `
 	- Removes package files and configuration files.
 	- Be careful while using this command.
-		` apt-get purge pkgname `
+	
 
 # dpkg suite
 
@@ -359,30 +374,38 @@ The following filesystem contains text information about packages.
 
 * ` dpkg -l  pattern `
 	- List all packages whose names match the pattern.
+		
 		```bash
 		dpkg -l nmap
 		```
+		
 	- prints name, version, architecture and description of package *nmap*.
 * ` dpkg -L package `
 	- List installed files that came from *package*.
+		
 		```bash
 		dpkg -L nmap
 		```
+		
 	- Prints list of directories and files added to the system and used by *nmap* package.
 * ` dpkg -s package `
 	- Report the status of *package*.
+		
 		```bash
 		dpkg -s nmap
 		```
+		
 	- Prints the status of whether the package *nmap* is installed or not and other info.
 	- The output is similar to ` apt-cache show ` command.
 	 
 * ` dpkg -S pattern `
 	- Search installed packages for a file using *pattern*.
 	- Prints the name of the package that made the particular executable available.
+		
 		```bash
 		dpkg -S /usr/bin/perl
 		```
+		
 	- Prints the name of the package that the executable ` /usr/bin/perl ` belongs to.
 	- Perl is scripting language used specifically for text processing using regex.
 
@@ -404,6 +427,7 @@ Prints package names and section name to which the package belongs.
 	- Specify ` format ` for the output.
 	- Some formats : ` Section `, ` binary:Package `
 	- Introduce escapes using ` \ `.
+		
 		' \n ' : newline
 		' \r ' : carriage return
 		' \t ' : tab
@@ -411,14 +435,19 @@ Prints package names and section name to which the package belongs.
 ```bash
 dpkg-query -W -f="${Section} ${binary:Package}\n" | less
 ```
+
 	- Prints name of the section and package of each package.
+	
 ```bash
 dpkg-query -W -f="${Section} ${binary:Package}\n" | sort | less
 ```
+
 	- Prints name of the section and package of each package in alphabetically sorted order.
+
 ```bash
 dpkg-query -W -f="${Section} ${binary:Package}\n" | grep shells
 ```
+
 	- Using ` grep ` utility we are printing only those lines which contain the word *shells*.
 	- More on [` grep `](/Week-4/Lecture1-2.md) in next week (Week-4). 
 
