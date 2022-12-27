@@ -298,6 +298,7 @@ The details of websites are given in the following hierarchy.
 		```
 * ` upgrade ` : This option is used to upgrade all installed packages.
 	- This option reads the details fetched by ` apt-get update ` command.
+		
 		```bash
 		sudo apt-get upgrade
 		```
@@ -305,12 +306,14 @@ The details of websites are given in the following hierarchy.
 		```bash
 		sudo apt upgrade
 		```
+		
 	- This lists how many updates are available and how much data needs to be downloaded.
 	- This command asks for comformation to proceed the download.
 
 * ` install ` : It is used to install a package.
 	- To install *fortunes* package. See [fortune](#fortune) command.
-	 	```bash
+		
+		```bash
 		sudo apt-get install fortunes 
 		```
 		
@@ -338,6 +341,7 @@ The details of websites are given in the following hierarchy.
 		```bash
 		sudo apt-get remove fortunes fortune-mod
 		```
+		
 	- This command removes the fortunes package.
 	- fortune-mod contains fortune cookies, hence it also needs to be removed.
 
@@ -433,26 +437,23 @@ Prints package names and section name to which the package belongs.
 		' \t ' : tab.
 
 * Examples
-				
+	- Prints name of the section and package of each package.
+		
 		```bash
 		dpkg-query -W -f="${Section} ${binary:Package}\n" | less
 		```
 		
-	- Prints name of the section and package of each package.
+	- Prints name of the section and package of each package in alphabetically sorted order.
 	
 		```bash
 		dpkg-query -W -f="${Section} ${binary:Package}\n" | sort | less
 		```
-
-	- Prints name of the section and package of each package in alphabetically sorted order.
+	- Using ` grep ` utility we are printing only those lines which contain the word *shells*.
+	- More on [` grep `](/Week-4/Lecture1-2.md) in next week (Week-4). 
 
 		```bash
 		dpkg-query -W -f="${Section} ${binary:Package}\n" | grep shells
 		```
-
-	- Using ` grep ` utility we are printing only those lines which contain the word *shells*.
-	- More on [` grep `](/Week-4/Lecture1-2.md) in next week (Week-4). 
-
 
 # Games
 
