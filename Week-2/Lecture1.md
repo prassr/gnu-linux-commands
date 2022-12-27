@@ -118,7 +118,7 @@ f1  f2
 ### [` man `](/Week_1/Lecture2-3.md#man)
 
 ### ` which `
-* ` which  <command> ` - Print the path of ` command `
+* ` which  <command> ` - Print the path of ` command ` or check if a package exists or not.
 * To print path of commands ` less ` and ` more ` 
 ```terminal
 /etc$ which less
