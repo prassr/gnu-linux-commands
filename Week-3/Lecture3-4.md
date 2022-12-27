@@ -428,25 +428,27 @@ Prints package names and section name to which the package belongs.
 	- Some formats : ` Section `, ` binary:Package `
 	- Introduce escapes using ` \ `.
 		
-		' \n ' : newline
-		' \r ' : carriage return
-		' \t ' : tab
+		' \n ' : newline,
+		' \r ' : carriage return,
+		' \t ' : tab.
 
-```bash
-dpkg-query -W -f="${Section} ${binary:Package}\n" | less
-```
-
+* Examples
+				
+		```bash
+		dpkg-query -W -f="${Section} ${binary:Package}\n" | less
+		```
+		
 	- Prints name of the section and package of each package.
 	
-```bash
-dpkg-query -W -f="${Section} ${binary:Package}\n" | sort | less
-```
+		```bash
+		dpkg-query -W -f="${Section} ${binary:Package}\n" | sort | less
+		```
 
 	- Prints name of the section and package of each package in alphabetically sorted order.
 
-```bash
-dpkg-query -W -f="${Section} ${binary:Package}\n" | grep shells
-```
+		```bash
+		dpkg-query -W -f="${Section} ${binary:Package}\n" | grep shells
+		```
 
 	- Using ` grep ` utility we are printing only those lines which contain the word *shells*.
 	- More on [` grep `](/Week-4/Lecture1-2.md) in next week (Week-4). 
