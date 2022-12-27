@@ -1,0 +1,33 @@
+apt-cache show nmap
+
+Package: nmap
+Architecture: amd64
+Version: 7.91+dfsg1+really7.80+dfsg1-2build1
+Priority: extra
+Section: universe/net
+Origin: Ubuntu
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian Security Tools <team+pkg-security@tracker.debian.org>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 4239
+Depends: nmap-common (= 7.91+dfsg1+really7.80+dfsg1-2build1), libc6 (>= 2.34), libgcc-s1 (>= 3.3.1), liblinear4 (>= 2.01+dfsg), liblua5.3-0, libpcap0.8 (>= 1.5.1), libpcre3, libssl3 (>= 3.0.0~~alpha1), libstdc++6 (>= 11), lua-lpeg (>= 1.0.2), zlib1g (>= 1:1.1.4)
+Suggests: ncat, ndiff, zenmap
+Filename: pool/universe/n/nmap/nmap_7.91+dfsg1+really7.80+dfsg1-2build1_amd64.deb
+Size: 1730834
+MD5sum: d3def4f1688dbe0691fef9aa3da84537
+SHA1: e1c8e88e9682d1380d2f2038bdee7c978c712471
+SHA256: e3e09f2b401743aed80e44e14b2209b419068f9e0671af67603118196636668d
+SHA512: 2ffa29db2fa5ac142a9f2a70b677427dd58798ab2cf03c80024b49ea7fcee0df24d1a930bda0a2533d5efa10ca2ceefbebc43414d87d758a38c132d86da87272
+Homepage: https://nmap.org/
+Description-en: The Network Mapper
+ Nmap is a utility for network exploration or security auditing. It
+ supports ping scanning (determine which hosts are up), many port
+ scanning techniques, version detection (determine service protocols
+ and application versions listening behind ports), and TCP/IP
+ fingerprinting (remote host OS or device identification). Nmap also
+ offers flexible target and port specification, decoy/stealth scanning,
+ sunRPC scanning, and more. Most Unix and Windows platforms are
+ supported in both GUI and commandline modes. Several popular handheld
+ devices are also supported, including the Sharp Zaurus and the iPAQ.
+Description-md5: bc417f4c1fdba7d8d9b0ca8a2a90b7a8
+

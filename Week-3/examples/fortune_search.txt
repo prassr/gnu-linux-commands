@@ -1,0 +1,54 @@
+apt-cache search fortune
+
+
+9base - Plan 9 userland tools
+colossal-cave-adventure - Colossal Cave Adventure game
+cookietool - suite of programs to help maintain a fortune database
+display-dhammapada - fortune-like collection of Buddhist sayings
+dopewars - drug-dealing game set in streets of New York City
+dopewars-data - drug-dealing game set in streets of New York City - data files
+fortunate.app - Display a quotation (fortune) in a window for GNUstep
+fortune-anarchism - anarchist quotes for fortune
+fortune-mod - provides fortune cookies on demand
+fortunes - Data files containing fortune cookies
+fortunes-bg - Bulgarian data files for fortune
+fortunes-bofh-excuses - BOFH excuses for fortune
+fortunes-br - Data files with fortune cookies in Portuguese
+fortunes-cs - Czech and Slovak data files for fortune
+fortunes-de - German data files for fortune
+fortunes-debian-hints - Debian Hints for fortune
+fortunes-eo - Collection of esperanto fortunes.
+fortunes-eo-ascii - Collection of esperanto fortunes (ascii encoding).
+fortunes-eo-iso3 - Collection of esperanto fortunes (ISO3 encoding).
+fortunes-es - Spanish fortune database
+fortunes-es-off - Spanish fortune cookies (Offensive section)
+fortunes-ga - Irish (Gaelige) data files for fortune
+fortunes-it - Data files containing Italian fortune cookies
+fortunes-it-off - Data files containing Italian fortune cookies, offensive section
+fortunes-mario - Fortunes files from Mario
+fortunes-min - Data files containing selected fortune cookies
+fortunes-off - Data files containing offensive fortune cookies
+fortunes-pl - Polish data files for fortune
+fortunes-ru - Russian data files for fortune
+fortunes-spam - fortunes taken from SPAM messages
+fortunes-ubuntu-server - Ubuntu server tips for fortune
+fortunes-zh - Chinese Data files for fortune
+gtypist - simple ncurses touch typing tutor
+haskell-misfortune - fortune-mod clone
+irssi-scripts - collection of scripts for irssi
+libfortune-perl - Perl module to read fortune (strfile) databases
+libghc-misfortune-dev - fortune-mod clone
+libghc-misfortune-doc - fortune-mod clone; documentation
+libghc-misfortune-prof - fortune-mod clone; profiling libraries
+libmath-geometry-voronoi-perl - Perl module to compute Voronoi diagrams from sets of points
+mudita24 - ALSA GUI control tool for Envy24 (ice1712) soundcards
+nlkt - non-linear keyboard trainer
+node-d3-voronoi - Compute the Voronoi diagram of a set of two-dimensional points
+pure-ftpd - Secure and efficient FTP server
+pure-ftpd-ldap - Secure and efficient FTP server with LDAP user authentication
+pure-ftpd-mysql - Secure and efficient FTP server with MySQL user authentication
+pure-ftpd-postgresql - Secure and efficient FTP server with PostgreSQL user authentication
+stardict-plugin-fortune - International dictionary lookup program - fortune plugin
+tfortune - Fortune Cookies with Tags
+tfortunes - Data files for tfortune
+xcowsay - Graphical configurable talking cow
