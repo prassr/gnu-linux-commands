@@ -21,6 +21,7 @@ Ref: https://standards.ieee.org/standard/1003_1-2001.html
 
 ### Special Characters (BRE and ERE)
 * Good practice to enclose the pattern within single / double quotes.
+
 | Character(s) | Description |
 | :---------:  | :---------- |
 | ` . `        | Any single character except null or newline |
@@ -32,12 +33,14 @@ Ref: https://standards.ieee.org/standard/1003_1-2001.html
 
 
 ### Special Characters (BRE)
+
 | Character(s) | Description |
 | :---------:  | :---------- |
 | ` \{n,m\} `  | Range of occurrences of preceding pattern at least ` n ` and utmost ` m ` times |
 | ` \(\) `     | Grouping of regular expressions |
 
 ### Special Characters (ERE)
+
 | Character(s) | Description |
 | :---------:  | :---------- |
 | ` {n,m} `  | Range of occurrences of preceding pattern at least ` n ` and utmost ` m ` times |
@@ -50,7 +53,8 @@ Ref: https://standards.ieee.org/standard/1003_1-2001.html
 ### Character Classes
 * Character classes follow specific structure, ` [:class-name:] `
 * The classes should be used within character enclosure as ` [character-class] `
-| Class |  Represents |
+
+| Class | Represents |
 | :---------:  | :---------- |
 | ` [[:print:]] ` | Printable |
 | ` [[:alnum:]] ` | Alphanumeric |
@@ -77,6 +81,7 @@ These are used to match again previously matched patterns within ` \(\) ` or ` (
 
 ### BRE Operator Precedence
 * highest to lowest in this order.
+
 | Class |  Represents |
 | :---------:  | :---------- |
 | ` [..] ` ` [==] ` ` [::] ` | Char collation | 
@@ -89,6 +94,7 @@ These are used to match again previously matched patterns within ` \(\) ` or ` (
 
 ### ERE Operator Precedence
 * highest to lowest in this order.
+
 | Class |  Represents |
 | :---------:  | :---------- |
 | ` [..] ` ` [==] ` ` [::] ` | Char collation | 
