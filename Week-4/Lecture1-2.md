@@ -47,7 +47,7 @@ Ref: https://standards.ieee.org/standard/1003_1-2001.html
 | ` () `     | Grouping of regular expressions |
 | ` + `      | One of more of preceding character / expression |
 | ` ? `      | Zero of one of preceding character / expression |
-| ` | `      | Logical OR over the patterns |   
+| ` \| `      | Logical OR over the patterns |   
 
 
 ### Character Classes
@@ -608,7 +608,7 @@ Comment start with ` # ` till the end of line.
 		L : start upper end lower : h
 		```
 		
-		+ ` '[[:alpha:]]$' ` : 5**g**, **H**, **l**
+		+ ` '[[:alpha:]]$' ` : 5**g**, **H**, **h**
 		
 		To match an alphabetic character anywhere in the line
 		+ Try in a terminal
@@ -701,7 +701,7 @@ Comment start with ` # ` till the end of line.
 		```
 	
 	- ` [[:punct:]] ` matches punctuation characters.
-		+ Punctuation Characters : `~\!@#$%^&*_-+=[]{}();:,.<>/?""''
+		+ Punctuation Characters : `` `~\!@#$%^&*_-+=[]{}();:,.<>/?""'' ``
 		
 		To match a punctuation character at the beginning of the line 
 		
@@ -932,7 +932,7 @@ Comment start with ` # ` till the end of line.
 		rse text,line-3
 		```
 		
-	- ` cut ` -d"D" ` ` -f ` to cut and select characters by fields separated by D (delimeter)
+	- ` cut -d"D" -f ` to cut and select characters by fields separated by D (delimeter)
 		
 		To select first field using D=" " (space)
 		
@@ -1002,7 +1002,7 @@ Comment start with ` # ` till the end of line.
 		```bash
 		cat fields.txt | grep ";.*,"
 		```
-		+ Matches pattern like **;hello world,**
+		+ Matches patterns like **;hello world,**
 		+ This pattern can be extracted using [sed]() command
 
 	
