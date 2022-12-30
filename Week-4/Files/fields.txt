@@ -1,0 +1,3 @@
+1234;hello world,line-1
+234567;welcome cmdline,line-2
+3456;parse text,line-3

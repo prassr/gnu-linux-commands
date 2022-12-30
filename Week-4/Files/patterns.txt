@@ -1,0 +1,6 @@
+Aadhar card number contains 12 digits and can look like 123456781234 for example.
+Pincodes of cities of Bharat contain 6 digits and that of IITM is 600036.
+Phone numbers without the country code or 0 prefix for std code are 10 digits.
+An example for my office landline is 4422574770 and prefix with 0 to dial me in my office.
+Roll numbers in IIT for regular students are of the pattern MM22B001 where the first two letters correspond to the Department code, 2 digits for the year of joining, then the program code character and then a 3 digit number for their roll number within the class.
+URLs can be given these days without the protocol like https://www.iitm.ac.in/ They can be given as just github.com for example.
