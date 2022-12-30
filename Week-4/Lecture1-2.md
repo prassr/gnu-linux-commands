@@ -878,7 +878,7 @@ Comment start with ` # ` till the end of line.
 		URLs can be given these days without the protocol like https://www.iitm.ac.in/ They can be given as just github.com for example.
 		```
 		
-		+ ` "\b[[:alnum:]]+\.[[:alnum:]]+" ` : **www.iitm**.**sc.in**, **github.com**
+		+ ` "\b[[:alnum:]]+\.[[:alnum:]]+" ` : **www.iitm**.**ac.in**, **github.com**
 
 
 ## ` cut ` Command
