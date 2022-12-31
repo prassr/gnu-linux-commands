@@ -1,0 +1,4 @@
+line-1 hello world
+line-2 welcome to line editor
+line-3 ed is perhaps the oldest editor out there
+line-4 end of file
