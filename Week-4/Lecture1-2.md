@@ -76,7 +76,7 @@ These are used to match again previously matched patterns within ` \(\) ` or ` (
 * A line with two occurrences of *hello* will be matched using:
 	- ` .* ` : any arbitrary number of characters.
 ```regex
-\(hell\).*\1
+\(hello\).*\1
 ```
 
 ### BRE Operator Precedence
@@ -878,7 +878,7 @@ Comment start with ` # ` till the end of line.
 		URLs can be given these days without the protocol like https://www.iitm.ac.in/ They can be given as just github.com for example.
 		```
 		
-		+ ` "\b[[:alnum:]]+\.[[:alnum:]]+" ` : **www.iitm**.**ac.in**, **github.com**
+		+ ` "\b[[:alnum:]]+\.[[:alnum:]]+" ` : **www.iitm**,  **ac.in**, **github.com**
 
 
 ## ` cut ` Command
