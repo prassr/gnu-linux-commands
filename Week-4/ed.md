@@ -60,22 +60,14 @@ These commands are used for editing.
 
 * To open file to edit.
 
-<<<<<<< HEAD
-		```terminal
-		~$ ed test.txt
-		117
-		
-		```
-
-Here the prompt is available for editing, *117* is size of file [test.txt](/Week-4/Files/test.txt)
-=======
-	```terminal	
+	```terminal
 	~$ ed test.txt
 	117
+
 	```
 
 	- Here the prompt is available for editing, *117* is size of file [test.txt](/Week-4/Files/test.txt)
->>>>>>> 53f7026348cc559a5972d132e071fd5f55e4a84b
+
 
 * To see the prompt string, type ` P ` and press enter.
 	- The default prompt is ` * `.
