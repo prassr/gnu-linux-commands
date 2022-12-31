@@ -63,7 +63,7 @@ We will use [test.txt](/Week-4/Files/test.txt), the file used in lecture, to wor
 		```terminal
 		~$ ed test.txt
 		117
-
+		
 		```
 
 Here the prompt is available for editing, *117* is size of file [test.txt](/Week-4/Files/test.txt)
