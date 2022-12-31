@@ -49,7 +49,7 @@ Old editors from the days of Unix. These editors are included by default in Linu
 
 We will look at ed, nano (pico), vim and emacs editors.
 
-# [ed](/Week-4/ed.md)
-# [nano](/Week-4/nano.md)
-# [vim](/Week-4/vim.md)
-# [emacs](/Week-4/emacs.md)
+## [ed](/Week-4/ed.md)
+## [nano](/Week-4/nano.md)
+## [vim](/Week-4/vim.md)
+## [emacs](/Week-4/emacs.md)
