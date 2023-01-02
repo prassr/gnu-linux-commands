@@ -53,3 +53,29 @@ We will look at ed, nano (pico), vim and emacs editors.
 ## [nano](/Week-4/nano.md)
 ## [vim](/Week-4/vim.md)
 ## [emacs](/Week-4/emacs.md)
+
+
+## Commands 
+
+### ` readlink `
+
+```bash
+readlink -f path
+```
+
+* It print value of symbolic link or canonical file name.
+* With ` -f ` as option it recursively follows the symlink and prints the canonical file name.
+ 
+		```terminal
+		~$ readlink -f /usr/bin/pico
+		/usr/bin/nano	
+		```
+		
+### ` dmesg `
+
+```bash
+dmesg
+```
+
+* It is used to examine or control kernel ring buffer.
+* By default it displays all the messages from kernel ring buffer.
