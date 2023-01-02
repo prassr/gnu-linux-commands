@@ -1,4 +1,4 @@
-# **ed** Editor
+# The GNU ed line editor
 
 
 It is used for editing file line by line.
