@@ -5,7 +5,7 @@
 * It is said that vi is the most complex editor with respect to it's features which it provides through the commands.
 * vim is available for all operating systems.
 * Vim tutorial
-	- THe following command can be used to open vim tutorial.
+	- The following command can be used to open vim tutorial.
 
 		```bash
 		vimtutor
@@ -15,15 +15,15 @@
 
 * Normal Mode
 	
-		```bash
-		vi <filename>
-		```
+	```bash
+	vi <filename>
+	```
 
 * Binary mode
 	
-		```bash
-		vi -b <filename> 
-		```
+	```bash
+	vi -b <filename> 
+	```
 
 ## Modes  in vi
 
@@ -75,14 +75,14 @@ It is used to run native or system commands in vi editor.
 | ` l ` | move right |
 
 
-		```
-							k ▴ 
-			
-		h ◂	Bsp		 "Moving around in vi"	   l ▸ Space
-			
-							j ▾ Enter
+```
+		     k ▴ 
 
-		```
+h ◂ Bsp	    "Moving around in vi"       l ▸ Space
+
+		    j ▾ Enter
+
+```
 
 #### Screen Manipulation
 
@@ -181,7 +181,7 @@ Syntax
 
 | Keys | Description |
 | :---: | :--------- |
-|  `` | only first occurrence |
+|  ` ` | only first occurrence |
 | ` c ` | prompt for confirmation |
 | ` g ` | all occurrences | 
 

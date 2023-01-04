@@ -6,14 +6,15 @@ Documentation: https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf
 
 * GUI
 
-		```bash
-		emacs <filename>
-		```
+	```bash
+	emacs <filename>
+	```
 		
 * Terminal
 
-		```bash
-		emacs -nw <filename>
+	```bash
+	emacs -nw <filename>
+	```
 
 Shortcuts
 * ` C- ` : Control key

@@ -108,7 +108,7 @@ Definitions:
 
 | Keys | Description |
 | :---: | :--------- |
-| ` M-G ` ` M-^- ` ` ^7 ` ` ^/ ` Go to specified line and column number |
+| ` M-G ` ` M-^- ` ` ^7 ` ` ^/ ` | Go to specified line and column number |
 | ` M-] ` | Go to complementary bracket |
 | ` M-▴ ` ` M-- ` | Scroll viewport up |
 | ` M-▾ ` ` M-+ `| Scroll viewport down |
@@ -128,7 +128,7 @@ Definitions:
 | ` M-A ` ` ^6 ` | Turn the mark on or off |
 | ` Tab ` ` ^I ` ` M-} `| Indent current line or  marked region |
 | ` Sh-Tab ` ` M-{ ` | Unindent current line or  marked region |
-| ` ^M ` ` Enter `   Insert a newline at the cursor position |
+| ` ^M ` ` Enter `  | Insert a newline at the cursor position |
 | ` M-Ins ` | Place or remove an anchor at the current line |
 | ` M-V ` | Enter next keystroke verbatim |
 | ` M-S ` | Soft wrapping of overlong lines enable/disable |
