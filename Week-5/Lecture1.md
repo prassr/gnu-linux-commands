@@ -17,15 +17,15 @@ Ref: Classic Shell Scripting - Arnold Robbins & Nelson H.F. Beebe
 
 ### Script Components
 	
-	```bash
-	#! interpreter
-	# comments
-	commands
-	loops
-	variables
-	case statements
-	functions
-	```
+```bash
+#! interpreter
+# comments
+commands
+loops
+variables
+case statements
+functions
+```
 
 ### Types of Scripts
 
@@ -116,11 +116,11 @@ The following commands can be used for output.
 
 ### Command Substitution
 
-	```bash
-	var=`command`
-	
-	var=$(command)
-	```
+```bash
+var=`command`
+
+var=$(command)
+```
 
 * ` command ` is executed and the output is substituted.
 * Here, the variable ` var ` will be assigned with that output
@@ -132,72 +132,71 @@ The following commands can be used for output.
 
 #### for do loop
 
-	```bash
-	for var ib list
-	do
-		commands
-	done
-	```
+```bash
+for var ib list
+do
+	commands
+done
+```
 	
-	- ` commands ` are executed once for each item in the ` list `
-	- space is the field delimiter
-	- set ` IFS ` (Internal Field Separator) environment variable if required.
+- ` commands ` are executed once for each item in the ` list `
+- space is the field delimiter
+- set ` IFS ` (Internal Field Separator) environment variable if required.
 
 
 #### case statement
 
-	```bash
-	case var in
-	pattern1)
-		commands
-		;;
-	pattern2)
-		commands
-		;;
-	esac
-	```
+```bash
+case var in
+pattern1)
+	commands
+	;;
+pattern2)
+	commands
+	;;
+esac
+```
 	
-	- ` commands ` are executed each ` pattern ` matched for ` var ` in the options.
+- ` commands ` are executed each ` pattern ` matched for ` var ` in the options.
 	
 #### if statement
 	
-	```bash
-	if condition
-	then
-		commands
-	fi
-	```
-	
-	```bash
-	if condition; then
-		commands
-	fi
-	```
-	
-	- ` commands ` are exectuted only if ` condition ` returns *true*.
+```bash
+if condition
+then
+	commands
+fi
+```
+
+```bash
+if condition; then
+	commands
+fi
+```
+
+- ` commands ` are exectuted only if ` condition ` returns *true*.
 
 #### while do loop
 	
-	```bash
-	while condition
-	do
-		commands
-	done
-	```
-	
-	- ` commands ` are executed only if ` condition ` is *true*.
+```bash
+while condition
+do
+	commands
+done
+```
+
+- ` commands ` are executed only if ` condition ` is *true*.
 
 #### until do loop
 
-	```bash
-	until condition
-	do
-		commands
-	done
-	```
-	
-	- ` commands ` are executed only if ` condition ` returns *false*.
+```bash
+until condition
+do
+	commands
+done
+```
 
+- ` commands ` are executed only if ` condition ` returns *false*.
 
 ### Conditions
 
@@ -299,28 +298,28 @@ The expressions can have one operand ( unary ) or 2 operands (binary)
 
 definition
 
-	```bash
-	myfunction()
-	{
-		commands
-	}
-	```
-	or 
-	```bash
-	function myfunction
-	{
-		commands
-	}
-	```
+```bash
+myfunction()
+{
+	commands
+}
+```
+or 
+```bash
+function myfunction
+{
+	commands
+}
+```
 
 call 
 	
-	```bash
-	myfunction
-	```
+```bash
+myfunction
+```
 
-	- ` commands ` are executed each time ` myfunction ` is called.
-	- Definitions must be before calls.
+- ` commands ` are executed each time ` myfunction ` is called.
+- Definitions must be before calls.
 
 
 
