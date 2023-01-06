@@ -189,7 +189,7 @@ done
 
 ` break ` is used to exit the loop halting further iteration.
 
-```
+```bash
 while condition
 do
 	commands
@@ -356,4 +356,4 @@ eval my-arg
 
 ##  Security Tips
 * Do not give set uid permission to the scripts.
-* Make sure that user input processes are safe.
+* Make sure that processing user input is safe.
