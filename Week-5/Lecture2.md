@@ -353,3 +353,7 @@ eval my-arg
 	- [select-example.sh](/Week-5/shell-scripts/select-example.sh)
 	
 
+
+##  Security Tips
+* Do not give set uid permission to the scripts.
+* Make sure that user input processes are safe.
