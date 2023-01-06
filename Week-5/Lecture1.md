@@ -236,8 +236,8 @@ set -x
 bash -x ./myscript.sh
 ```
 
-	- Print the command before executing it.
-	- Place ` set -x ` inside the script.
+- Print the command before executing it.
+- Place ` set -x ` inside the script.
 	
 	
 ## Combining conditions
@@ -342,7 +342,7 @@ bash -x ./myscript.sh
 	LABEL
 	```
 	
-		- A ` LABEL ` can be anything.
+	- A ` LABEL ` can be anything.
 		
 	or
 	
@@ -355,7 +355,7 @@ bash -x ./myscript.sh
 		LABEL
 	```
 	
-		- A hyphen tells to ignore leading tabs.
+	- A hyphen tells to ignore leading tabs.
 	
 * Example Scripts
 	- [heredoc-example-1.sh.sh](/Week-5/shell-scripts/heredoc-example-1.sh)
