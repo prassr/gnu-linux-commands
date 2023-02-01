@@ -5,18 +5,18 @@
 * [Lecture 2, 3](/Week-1/Lecture2-3.md)
 
 ### [Week 2](/Week-2)
-* [Lecture 1](/Week2/Lecture1.md)
-* [Lecture 2](/Week2/Lecture2.md)
-* [Lecture 3, 4](/Week2/Lecture3-4.md)
-* [Lecture 5](/Week2/Lecture5.md)
+* [Lecture 1](/Week-2/Lecture1.md)
+* [Lecture 2](/Week-2/Lecture2.md)
+* [Lecture 3, 4](/Week-2/Lecture3-4.md)
+* [Lecture 5](/Week-2/Lecture5.md)
 
 ### [Week 3](/Week-3)
-* [Lecture 1, 2](/Week2/Lecture1-2.md)
-* [Lecture 3, 4](/Week2/Lecture3-4.md)
+* [Lecture 1, 2](/Week-3/Lecture1-2.md)
+* [Lecture 3, 4](/Week-3/Lecture3-4.md)
 
 ### [Week 4](/Week-4)
-* [Lecture 1, 2](/Week2/Lecture1-2.md)
-* [Lecture 3, 4, 5](/Week2/Lecture3-5.md)
+* [Lecture 1, 2](/Week-4/Lecture1-2.md)
+* [Lecture 3, 4, 5](/Week-4/Lecture3-5.md)
 
 ### [Week 5](/Week-5)
 * [Lecture 1](/Week-5/Lecture1.md)
