@@ -524,11 +524,11 @@ groot sudo
 [back](#man)
 
 ## Filesystem Hierarchy Standard
-> ` / ` is the root of the file system.
-> ` / ` is also the delimiter for sub-directories.
-> ` . ` is current directory.
-> ` .. ` is parent directory.
-> Path for traversal can be absolute or relative.
+* ` / ` is the root of the file system.
+* ` / ` is also the delimiter for sub-directories.
+* ` . ` is current directory.
+* ` .. ` is parent directory.
+* Path for traversal can be absolute or relative.
 
 - **` / `** : Root directory
   * **` /root `**  : Superuser's home directory
