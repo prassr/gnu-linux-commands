@@ -66,10 +66,10 @@ readlink -f path
 * It print value of symbolic link or canonical file name.
 * With ` -f ` as option it recursively follows the symlink and prints the canonical file name.
  
-		```terminal
-		~$ readlink -f /usr/bin/pico
-		/usr/bin/nano	
-		```
+	```terminal
+	~$ readlink -f /usr/bin/pico
+	/usr/bin/nano	
+	```
 		
 ### ` dmesg `
 
