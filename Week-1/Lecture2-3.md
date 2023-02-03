@@ -218,7 +218,7 @@ drwxrwxr-x 2 groot groot  3 Nov 19 19:41 Downloads
 
 ### ` cd `
 ` cd <dirname> `
-* Without any argument or ` ~ ` as argument this commands makes user's home directory as working directory.
+* Without any argument or ` ~ ` as argument this command makes user's home directory as working directory.
 ```terminal
 ~$ cd
 ~$ cd ~
@@ -246,7 +246,7 @@ bash: cd: OLDPWD not set
 
 * ` man ` takes numbers 1-9 as argument. These numbers denote [section](#man-page-sections). 
 * To see the first section of ` ls ` command.
-	` man section command `
+	- ` man section command `
 ```terminal
 ~$ man 1 ls 
 ```
