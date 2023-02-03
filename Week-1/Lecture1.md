@@ -29,7 +29,7 @@
 * Launch the hypervisor and configure a virtual machine.
 * Launch the virtual machine.
 
-## Launching a GNU-Linux OS using WSL (Windows Subsysyem for Linux).
+## Launching a GNU/Linux OS using WSL (Windows Subsystem for Linux).
 * Run powershell as an administrator.
 * Run command ` wsl --install `
 * Reboot the machine.
