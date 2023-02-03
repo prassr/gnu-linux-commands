@@ -194,7 +194,7 @@ drwxrwxr-x 2 groot groot  3 Nov 19 19:41 Downloads
 ### File Permission String
 * It is a 9 character string, starting after file type.
 * Each character is switch to binary digit 0 or 1.
-* Order : ` r ` - read (4), ` w ` - write (2), ` x ` - execute (1). Numbers are bit values in parentheses.
+* Order : ` r ` - read (4), ` w ` - write (2), ` x ` - execute (1). Numbers in parenthesis are binary place values in decimal.
 * Sum of bit values gives octal representations for permissions specific to user, group or other.
 * ` w ` : Permission required to create, modify or delete a file within a directory.
 * ` x ` : When set on directories, a user can search or change to them. 
