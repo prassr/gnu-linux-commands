@@ -384,14 +384,14 @@ MyFile.zip
 ```bash
 echo ${myvar/pattern/string}
 ```
-* Example 1 - Change only first occurence of *pattern* with **string**
+* Example 1 - Change only first occurrence of *pattern* with **string**
 ```terminal
 ~$ myvar=MyFile.SomeThing.jpeg
 ~$ echo ${myvar/e/E}
 MyFilE.SomeThing.jpeg
 ```
 
-* Match *pattern* max possible (` // `) and replce with **string**.
+* Match *pattern* max possible (` // `) and replace with **string**.
 ```bash
 echo ${myvar//pattern/string}
 ```
@@ -472,7 +472,7 @@ echo ${myvar^}
 Margali
 ```
 
-* Change all character to UPPER case using ` ^^ `
+* Change all characters to UPPER case using ` ^^ `
 ```bash
 echo ${myvar^^}
 ```
