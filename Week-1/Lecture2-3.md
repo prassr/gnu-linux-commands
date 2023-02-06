@@ -292,7 +292,7 @@ Linux rich-linux 5.15.0-56-generic #62-Ubuntu SMP Tue Nov 22 19:54:14 UTC 2022 x
 | ` ps `      |         | The user’s currently running processes |
 | ` ps `      |  ` --forest ` | Pictorial view of which process launched which process |
 | ` ps `      | ` -f `  | Full listing of the user’s currently running processes | 
-| ` ps `      | ` -e `  | Listing of all processes, except kerne processes | 
+| ` ps `      | ` -e `  | Listing of all processes, except kernel processes | 
 | ` ps `      | ` -ef ` | Full listing of all processes, except kernel processes |
 | ` ps `      | ` -A `  | All processes, including kernel processes | 
 | ` ps `      | ` -Kf ` | Full listing of kernel processes |
@@ -317,7 +317,7 @@ Linux rich-linux 5.15.0-56-generic #62-Ubuntu SMP Tue Nov 22 19:54:14 UTC 2022 x
 * Characters controlling which users' access to be changed 
 	- ` u ` user, ` g ` group , ` o ` other and `a` all
 * ` + ` : file mode bits are added to existing file mode bits.
-* ` - ` : file mode bits are removed from existing file mode bits. If used as ` -[ugoa] `, removes all permissions for `u`, 'g', `o` or `a`.
+* ` - ` : file mode bits are removed from existing file mode bits. If used as ` -[ugoa] `, removes all permissions for ` u `, ` g `, ` o ` or ` a `.
 * ` = ` : only specified file mode bits are kept, all other bits are removed.
 * Add ` rw ` permissions on file `hello.txt` for all. 
 ```terminal
