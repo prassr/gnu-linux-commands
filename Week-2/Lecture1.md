@@ -181,7 +181,7 @@ lrwxrwxrwx 1 root root 6 Nov  3 19:18 /usr/bin/apropos -> whatis
 | :---:    | ---         |
 | ` enter ` | Open a link |
 | ` < ` ` shift + , ` | Go back or previous |
-| ` > ` or  | Go forward or next | 
+| ` > ` | Go forward or next | 
 | ` M ` ` m ` | Search menu, similar to seach box |
 | ` S ` ` s ` | Regex search |
 | ` Q ` `q`| Quit |
@@ -329,8 +329,8 @@ lrwxrwxrwx 1 sanr sanr 5 Dec 19 08:28 file0 -> file1
 80500 -rw-rw-r-- 2 sanr sanr 0 Dec 18 20:20 file11
 ```
 * As you can see here, number of hard links are two for ` file1 ` and ` file2 ` as both are same which contrasts with symbolic link.
-* As long as number of hard links for a file > 1 you can delete any file.
-* X-device/X-cross storage hard links are are forbidden.
+* As long as number of hard links for a *file* > 1 you can delete any file which points to the same hard link as *file*.
+* X-device/X-cross storage hard links are forbidden.
 * It is typically forbidden to create hard link for a directory.
 
 # File Sizes
@@ -400,7 +400,7 @@ Change: 2022-11-03 19:51:25.078671510 +0200
 ## ` /sys `
 * In use since Kernel 2.6+.
 * It's a well organized filesystem.
-* Exlpore usb devices used in the machine.
+* Explore usb devices used in the machine.
 ```
 /sys/bus/usb/devices$ ls
 1-0:1.0  2-0:1.0  2-1  2-1:1.0  2-2  2-2:1.0  usb1  usb2
