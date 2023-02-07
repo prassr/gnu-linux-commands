@@ -189,22 +189,22 @@ md5sum [filename]
 ```
 * It gives *128 bit* checksum string irrespective of size of file.
 		
-		```terminal
-		~$ md5sum nmap_show.txt
-		2717ed2e8f6dd4a63a20c0317d695161  nmap_show.txt
-		```
+	```terminal
+	~$ md5sum nmap_show.txt
+	2717ed2e8f6dd4a63a20c0317d695161  nmap_show.txt
+	```
 		
 * When no input file is given, it reads the standard input (` - ` is the default filename for ` stdin `).
 	+ Write text and hit <ctrl+D>.
 		
-		```terminal
-		~$ md5sum
-		Overflow on /dev/null, please empty the bit bucket.
-		e67ef45f18ba7f8a6c339c08af30f72b  -
-		~$ md5sum
-		Overglow on /dev/null, please empty the bit bucket.
-		ea16952d936440cdddcb1a68cdbb7295  -
-		```
+	```terminal
+	~$ md5sum
+	Overflow on /dev/null, please empty the bit bucket.
+	e67ef45f18ba7f8a6c339c08af30f72b  -
+	~$ md5sum
+	Overglow on /dev/null, please empty the bit bucket.
+	ea16952d936440cdddcb1a68cdbb7295  -
+	```
 		
 ### ` sha1sum `
 ```bash
@@ -213,14 +213,14 @@ sha1sum [filename]
 * It gives *160 bit* SHA1 checksum string.
 * We will read the standard input, on same string given in [` md5sum `](#md5sum).
 		
-		```terminal
-		~$ sha1sum
-		Overflow on /dev/null, please empty the bit bucket.
-		61d7ab21e9961d11640172e3183b86296c01874d  -
-		~$ sha1sum
-		Overglow on /dev/null, please empty the bit bucket.
-		b52111e02999a26af3ebb2cdef7f0893dbbb92b1  -
-		```
+	```terminal
+	~$ sha1sum
+	Overflow on /dev/null, please empty the bit bucket.
+	61d7ab21e9961d11640172e3183b86296c01874d  -
+	~$ sha1sum
+	Overglow on /dev/null, please empty the bit bucket.
+	b52111e02999a26af3ebb2cdef7f0893dbbb92b1  -
+	```
 		
 	- Try this command with filename on any file you wish.
 ### ` sha256sum `
@@ -230,14 +230,14 @@ sha256sum [filename]
 * It gives *256 bit* SHA256 checksum string.
 * We will read the standard input, on same string given in [` md5sum `](#md5sum).
 		
-		```terminal
-		~$ sha256sum
-		Overflow on /dev/null, please empty the bit bucket.
-		27983a23a8319160adc6b4e2cadfac29f4e445e50998e0a5b4888c0becf51ffe  -
-		~$ sha256sum
-		Overglow on /dev/null, please empty the bit bucket.
-		e2919763cc71cd324d29f96483c7f46eb3d6b64ab17ce3448aaca4da9b2e5b39  -
-		```
+	```terminal
+	~$ sha256sum
+	Overflow on /dev/null, please empty the bit bucket.
+	27983a23a8319160adc6b4e2cadfac29f4e445e50998e0a5b4888c0becf51ffe  -
+	~$ sha256sum
+	Overglow on /dev/null, please empty the bit bucket.
+	e2919763cc71cd324d29f96483c7f46eb3d6b64ab17ce3448aaca4da9b2e5b39  -
+	```
 		
 	- Try this command with filename on any file you wish.
 
