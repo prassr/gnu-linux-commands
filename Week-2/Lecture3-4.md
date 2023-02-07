@@ -284,7 +284,7 @@ Thursday 22 December 2022 04:50:31 PM EET
 ### Slice of String Value
 * Provide *offset* and *slice_length* separated by ` : `.
 * ` ${varname:offset:slice_length} `
-* Display *4 chars* of the string valur of the variable ` myvar ` skipping first *5 chars*.
+* Display *4 chars* of the string value of the variable ` myvar ` skipping first *5 chars*.
 * If *slice_length > ${#varname}*, *slice_length = ${#varname}*.
 * Offset value can be negative.
 ```bash
