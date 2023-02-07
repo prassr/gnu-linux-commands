@@ -46,7 +46,7 @@
 * ` command1 || command2 || command3 `
 	- ` || ` is logical OR operator.
 	- A command is executed if exit status of previous command is ` false `
-	- If ` command1 ` succeeds, the execution will stops.
+	- If ` command1 ` succeeds, the execution will stop.
 		
 		```terminal
 		~$ ls -d D* || date
