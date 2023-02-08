@@ -1,5 +1,5 @@
 # Shell Variables Part - 1
-* Creationm, inspection, modifictaion, lists...
+* Creation, inspection, modifictaion, lists...
 
 ## Creating a Variable
 * ` myvar="value string" `
