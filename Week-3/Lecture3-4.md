@@ -327,9 +327,9 @@ The details of websites are given in the following hierarchy.
 ### Removing or Cleaning up Packages
 * ` autoremove ` : Remove packages that were automatically installed to satisfy a dependency and not needed.
 
-		```bash
-		sudo apt autoremove
-		``` 
+	```bash
+	sudo apt autoremove
+	``` 
 	- By removing these packages you can free some space.
 
 * ` clean ` : Clean local repository of retrieved packages.
@@ -338,9 +338,9 @@ The details of websites are given in the following hierarchy.
 
 * ` remove ` : This option is used to remove a particular package
 		
-		```bash
-		sudo apt-get remove fortunes fortune-mod
-		```
+	```bash
+	sudo apt-get remove fortunes fortune-mod
+	```
 		
 	- This command removes the fortunes package.
 	- fortune-mod contains fortune cookies, hence it also needs to be removed.
