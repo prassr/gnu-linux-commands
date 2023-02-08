@@ -424,10 +424,10 @@ The following filesystem contains text information about packages.
 ## ` dpkg-query `
 It is a tool to query the *dpkg* database.
 Prints package names and section name to which the package belongs.
-* ` dpkg -W [package-name-pattern...]`
+* ` dpkg-query -W [package-name-pattern...]`
 	- Show the list of packages
 
-* ` dpkg -f=format `
+* ` dpkg-query -f=format `
 	- Specify ` format ` for the output.
 	- Some formats : ` Section `, ` binary:Package `
 	- Introduce escapes using ` \ `.
