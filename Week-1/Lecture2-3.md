@@ -295,7 +295,6 @@ Linux rich-linux 5.15.0-56-generic #62-Ubuntu SMP Tue Nov 22 19:54:14 UTC 2022 x
 | ` ps `      | ` -e `  | Listing of all processes, except kernel processes | 
 | ` ps `      | ` -ef ` | Full listing of all processes, except kernel processes |
 | ` ps `      | ` -A `  | All processes, including kernel processes | 
-| ` ps `      | ` -Kf ` | Full listing of kernel processes |
 | ` ps `      | ` auxw `| Wide listing sorted by percentage of CPU usage, %CPU |
 
 [back](#ps_b)
