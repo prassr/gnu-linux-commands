@@ -132,7 +132,7 @@ echo $?
 
 ## Test if a Variable is *Not* Set
 * ` -z string ` 
-	- True if the length of the string is [[z]]ero.
+	- True if the length of the string is **z**ero.
 
 ```bash
 [[ -z ${myvar} ]];
