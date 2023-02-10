@@ -107,8 +107,10 @@ FileName_txt
 ~$ echo $myvar
 
 ```
-
+.............................................................
 ## Test if a Variable is Set
+* ` -v varname `
+	- True if the shell variable ` varname ` is set and is name reference. 
 ```bash
 [[ -v myvar ]];
 echo $?
@@ -118,7 +120,7 @@ echo $?
 	- ` 1 ` : failure (variable ` myvar ` is not set) 
 * Example
 ```terminal
-~$ myvar=
+~$ unset myvar
 ~$ [[ -v myvar ]];
 ~$ echo $?
 1
@@ -129,23 +131,25 @@ echo $?
 ```
 
 ## Test if a Variable is *Not* Set
+* ` -z string ` 
+	- True if the length of the string is [[z]]ero.
+
 ```bash
-[[ -z ${myvar+x} ]];
+[[ -z ${myvar} ]];
 echo $?
 ```
-* ` -z ` works oppsite to ` -v `
-* ` x ` can be any string
+
 * Return codes:
-	- ` 0 ` : success (variable ` myvar ` is not set)
-	- ` 1 ` : failure (variable ` myvar ` is set) 
+	- ` 0 ` : success (If the length of the string ` ${myvar} ` is zero.)
+	- ` 1 ` : failure (If the length of the string ` ${myvar} ` is not zero.) 
 * Example
 ```terminal
 ~$ unset myvar
-~$ [[ -z myvar ]];
+~$ [[ -z ${myvar} ]];
 ~$ echo $?
 0
 ~$ myvar=10
-~$ [[ -v myvar ]];
+~$ [[ -z ${myvar} ]];
 ~$ echo $?
 1
 ```
@@ -173,6 +177,9 @@ hello
 myvar is not set
 ~$ echo ${myvar}
 
+~$ myvar="HELLO"
+~$  ${myvar:-hello}
+HELLO
 ```
 
 ## Set Default Value
@@ -213,19 +220,19 @@ echo ${myvar:+"default"}
 * Pseudocode : 
 > if ` myvar ` is set:
 >
-> >	set "default" as its value
-> >
-> >	display its new value	
+> >	display "default"	
 >
 > else:
 >
-> >	display its value
+> >	display ""
 
 ### Example
 ```
 ~$ myvar=apple
 ~$ echo ${myvar:+APPLE}
 APPLE
+~$ echo $myvar
+apple
 ~$ unset myvar
 echo ${myvar:+APPLE}
 
