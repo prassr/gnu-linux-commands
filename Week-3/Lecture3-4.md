@@ -71,7 +71,7 @@ Since, we are using Ubuntu OS, we should get familiar with *Debian* package type
 	- DEB 
 		+ ` synaptic ` : GUI based
 		+ ` aptitude ` : command line based
-			* ` Advanced Package Tool ` (` apt `) is used by both ` synaptic ` and ` aptitude ` at the backend.
+			* Advanced Package Tool (` apt `) is used by both ` synaptic ` and ` aptitude ` at the backend.
 				- ` dpkg ` : used by ` apt ` at the backend.
 					+ ` dpkg-deb ` : used by ` dpkg ` at the backend.
 
