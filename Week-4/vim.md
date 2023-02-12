@@ -179,9 +179,9 @@ Syntax
 
 #### Flags
 
-| Keys | Description |
+| Flag | Description |
 | :---: | :--------- |
-|  ` ` | only first occurrence |
+|  No Flag  | only first occurrence |
 | ` c ` | prompt for confirmation |
 | ` g ` | all occurrences | 
 
