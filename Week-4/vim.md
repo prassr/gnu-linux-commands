@@ -93,7 +93,7 @@ h ◂ Bsp	    "Moving around in vi"       l ▸ Space
 | ` CTRL+D ` | Scroll down half screen |
 | ` CTRL+U ` | Scroll up half screen |
 | ` CTRL+L ` | Redraw screen |
-| ` CTRL+R ` | Redraw screen removing deleted stuff |
+| ` CTRL+R ` | Redraw screen removing deleted stuff, redo, pulls the file content towards newest change |
 
 
 #### Moving Around
@@ -146,7 +146,7 @@ h ◂ Bsp	    "Moving around in vi"       l ▸ Space
 | ` yy ` | copy (*y*ank) current line to buffer |
 | ` Nyy ` | copy next *N* lines, including current, into buffer |
 | ` p ` | Paste buffer into text after current line |
-| ` u ` | undo previous action | 
+| ` u ` | undo previous action, pulls the file content back to oldest change | 
 
 * ` y+Enter ` is same as ` 2yy `
 
@@ -165,7 +165,7 @@ h ◂ Bsp	    "Moving around in vi"       l ▸ Space
 ex mode
 Syntax
 * ` [addr] s/regex/replacement/[flags] `
-	- Search for text matching *regex* on lines specified by address *addr* and replace with *replacement* |
+	- Search for text matching *regex* on lines specified by address *addr* and replace with *replacement*
 
 ##### Address Types
 
