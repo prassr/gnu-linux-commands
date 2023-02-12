@@ -17,16 +17,16 @@ Ref: https://standards.ieee.org/standard/1003_1-2001.html
 * Languages: Java, Perl, Python, Ruby, ...
 * Tools: grep, sed, awk
 * Applications: MySQL, PostgreeSQL, ...
-* We will focus on grep in the lecture.
+* We will focus on grep here.
 
 ### Special Characters (BRE and ERE)
-* Good practice to enclose the pattern within single / double quotes.
+* It is a good practice to enclose the pattern within single / double quotes.
 
 | Character(s) | Description |
 | :---------:  | :---------- |
 | ` . `        | Any single character except null or newline |
 | ` * `        | Zero or more of *preceding* character / expression |
-| ` [] `       | Any of the enclosed characters; hyphen (` - `) indicates character range |
+| ` [] `       | Any of the enclosed characters/ [class]("#character-classes"); hyphen (` - `) indicates character range |
 | ` ^ `        | Anchor for beginning of line or *negation* of enclosed characters when used as ` [^] ` |
 | ` $ `        | Anchor for end of line |
 | ` \ `        | Escape special characters |
@@ -52,7 +52,7 @@ Ref: https://standards.ieee.org/standard/1003_1-2001.html
 
 ### Character Classes
 * Character classes follow specific structure, ` [:class-name:] `
-* The classes should be used within character enclosure as ` [character-class] `
+* The classes should be used within character enclosure braces as ` [character-class] `
 
 | Class | Represents |
 | :---------:  | :---------- |
@@ -70,9 +70,10 @@ Ref: https://standards.ieee.org/standard/1003_1-2001.html
 | ` [[:cntrl:]] ` | Control Characters |
 
 ### Backreferences
-These are used to match again previously matched patterns within ` \(\) ` or ` () `
-* ` \1 ` through ` \9 `
-* ` \n ` matches whatever was matched by *n*th earlier parenthesized subexpression.
+* These are used to match previously matched pattern (subexpression).
+* ` \(\) ` (BRE) or ` () ` (ERE) can be used to enclose subexpression that can be used later for backreferencing.
+* ` \1 ` (reference to the first subexpression) through ` \9 ` (referenct to the ninth subexpression)
+* ` \n ` matches whatever was matched by *n*th parenthesized subexpression.
 * A line with two occurrences of *hello* will be matched using:
 	- ` .* ` : any arbitrary number of characters.
 ```regex
@@ -118,9 +119,9 @@ Searches for string which matches *pattern* with each line in the file.
 
 ### Examples
 We will consider [names.txt](/Week-4/Files/names.txt) for the explanation.
-Comment start with ` # ` till the end of line.
+A comment starts with ` # ` and continues till the end of the line.
 * ` grep 'pattern' <filename> ` or ` command | grep 'pattern' `
-	- Looks for *string* as pattern in file filename.
+	- Looking for a *string* as a pattern in file *filename*.
 	- Print the lines which contain word 'Raman'.
 	
 		```terminal
@@ -272,7 +273,7 @@ Comment start with ` # ` till the end of line.
 		~$ cat names.txt | grep '[aeiou][aeiou]' # matches two vowels side by side.
 		```
 	
-	- ` [start-end] ` Matching any characters specified by range ` start-stop `.
+	- ` [start-stop] ` Matching any characters specified by range ` start-stop `.
 		+ ` [1-4] ` : Matches characters in range 1 to 4
 		
 		```terminal
