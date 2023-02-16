@@ -27,9 +27,9 @@ command &
 
 ## ` coproc `
 * Bash builtin command to create interactive asynchronous subshells.
-* The program runs asynchronously and can listen to standard input and use standard output when necessary.
-* Asynchronously run a subshell.
-* Run a command in a subshell. `NAME` is optional, default name is `COPROC`
+* The program runs asynchronously and can listen to standard input and give back standard output on need.
+
+* Run command(s) in a subshell. `NAME` is optional, default name is `COPROC`
 ```bash
 coproc [NAME] { command; }
 ```
@@ -44,7 +44,7 @@ read varname <&"${NAME[0]}"
 
 * Create a coprocess running `bc`
 ```terminal
-~$ coproc BC { bc --mathlib; };	# creates a corocess in a subshell
+~$ coproc BC { bc --mathlib; };	# creates a coprocess in a subshell
 [1] 3820
 ~$ echo "22/7" >&"${BC[1]}" 	# write input to coprocess  
 ~$ read output <&"${BC[0]}"	# read output from coprocess
