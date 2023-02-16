@@ -26,15 +26,37 @@ command &
 * ` [1] ` denotes the command number that is pushed to background. Not to be confused with ` 5477 ` which is ` PID `
 
 ## ` coproc `
-* Create a coprocess.
+* Bash builtin command to create interactive asynchronous subshells.
 * The program runs asynchronously and can listen to standard input and use standard output when necessary.
-* User can run any command meanwhile.
-
+* Asynchronously run a subshell.
+* Run a command in a subshell. `NAME` is optional, default name is `COPROC`
 ```bash
-coproc command
+coproc [NAME] { command; }
+```
+* Write to a specific coprocess stdin
+```
+echo "input" >&"${NAME[1]}"
+```
+* Read from a specific coprocess stdout
+```
+read varname <&"${NAME[0]}"
 ```
 
+* Create a coprocess running `bc`
+```terminal
+~$ coproc BC { bc --mathlib; };	# creates a corocess in a subshell
+[1] 3820
+~$ echo "22/7" >&"${BC[1]}" 	# write input to coprocess  
+~$ read output <&"${BC[0]}"	# read output from coprocess
+~$ echo $output	# echo the read output.
+3.14285714285714285714
+```
+- run ` ps --forest ` to see the process tree.
+	
 * Run command `sleep 10` as a coprocess.
+	- command run within the same shell.
+	- process name can not be given.
+	- default name is used.
 ```terminal
 ~$ coproc sleep 10
 [1] 5499
