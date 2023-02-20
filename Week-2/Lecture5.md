@@ -76,7 +76,7 @@ sleep 30
 ```
 
 ## ` jobs `
-* List the processes running in the background.
+* List the processes running in the background by the user.
 ```terminal
 ~$ coproc sleep 30
 [1] 5583
