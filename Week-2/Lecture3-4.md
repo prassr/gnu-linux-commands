@@ -694,7 +694,7 @@ declare -A hash
 ### Associative Arrays Operations
 * set value of element with index ` "a" ` in the array.
 ```bash
-$hash["a"]="value"
+hash["a"]="value"
 ```
 ```terminal
 ~$ hash[0]="Amul"
