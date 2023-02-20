@@ -358,5 +358,5 @@ bash -x ./myscript.sh
 	- A hyphen tells to ignore leading tabs.
 	
 * Example Scripts
-	- [heredoc-example-1.sh.sh](/Week-5/shell-scripts/heredoc-example-1.sh)
-	- [heredoc-example-2.sh.sh](/Week-5/shell-scripts/heredoc-example-2.sh)
+	- [heredoc-example-1.sh](/Week-5/shell-scripts/heredoc-example-1.sh)
+	- [heredoc-example-2.sh](/Week-5/shell-scripts/heredoc-example-2.sh)
