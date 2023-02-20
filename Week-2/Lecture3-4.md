@@ -9,7 +9,7 @@
 	- ` 10myvar ` is invalid
 * There are no spaces around ` = ` (assignment operator).
 	- ` myvar = 10 ` is invalid
-* A value can be number, string or a ` \` command \` ` (command substitution).
+* A value can be number, string or a `` `command` `` (command substitution).
 * Safer to enclose string value within double quotes.
 * ` ${myvar} ` is more convenient for string concatenation than ` $myvar `
 ### Examples
