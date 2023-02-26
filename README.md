@@ -23,7 +23,6 @@
 * [Lecture 2](/Week-5/Lecture2.md)
 
 
-
 Professor details:
 
 Prof. Gandham Phanikumar,
