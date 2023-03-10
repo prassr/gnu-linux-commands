@@ -40,7 +40,6 @@ Definitions:
 | ` ^U ` ` F10 `| Paste contents of cutbuffer |
 | ` M-T ` | Cut until end of buffer |
 | ` ^] ` | Complete current word | 
-<!-- | ` M-3 ` | Comment/uncomment line/region | -->
 | ` M-U ` | Undo last action |
 | ` M-E ` | Redo last undone action |
 | ` ^J ` ` F4 ` | Justify the current paragraph |
@@ -48,6 +47,7 @@ Definitions:
 | ` M-: ` | Start/stop recording a macro |
 | ` M-; ` | Run the last recorded macro |
 | ` F12 ` | Invoke the spell checker, if available |
+<!-- | ` M-3 ` | Comment/uncomment line/region | -->
 
 
 ### Search and Replace
