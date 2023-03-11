@@ -314,7 +314,7 @@ Sunday
 ~$ echo ${myvar: -3:3}
 678
 ~$ echo ${mydate: -3:2}
-68
+67
 ```
 
 * Using command and variable to obtain the same result. 
