@@ -20,6 +20,7 @@ The following packages are required to explore the hardware
 | hardinfo | hdparm | hwinfo | lshw |
 | memtester | net-tools | pciutils | procps |
 | sysstat | upower | util-linux | |
+| | | | |
 
 
 ### ` hwinfo ` 
@@ -52,7 +53,6 @@ lshw
 ```
 
 * To get information about specific hardware.
-
 	- ` lshw -c <HARDWARE> `
 
 ```bash
@@ -62,13 +62,12 @@ lshw -c display
 * Task:
 	- Print information about ` memory `.
 
-
 ### ` /proc/cpuinfo `
 
 * This filesystem contains information about the CPU.
 * in file
-	- *flags*: Capabilities of the CPU
-	- *cache*: How well the machine performs the computation?
+    - *flags*: Capabilities of the CPU
+    - *cache*: How well the machine performs the computation?
 
 ```bash
 cat /proc/cpuinfo
