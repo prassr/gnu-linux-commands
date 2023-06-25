@@ -1,0 +1,9 @@
+BACKUPDIR=/home/$(whoami)/backup
+DATESTAMP:=$(shell date +"%Y-%m-%d_%H.%M")
+TARBALL=backup_$(DATESTAMP).tar
+
+backup: file1 file2
+        @echo "Backing file1 file2 to $(DATESTAMP)"
+        tar -cvf $(TARBALL) file1 file2
+        @ls -l $(TARBALL)
+        mv $(TARBALL) $(BACKUPDIR)
