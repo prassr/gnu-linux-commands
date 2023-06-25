@@ -36,7 +36,7 @@ sed -f ./myscript.sed input.txt
 
 ## sed statements
  
-* add svg <!-- 4:13 week 6 lecture 5 -->
+*  <!-- 4:13 week 6 lecture 5  add svg -->
 
 ```text
 :label address-pattern action options
@@ -150,7 +150,7 @@ sed -e '5!p' sample.txt
 sed -n -e '$p' sample.txt
 ```
 
-  - Replacing ` '$p' ` with ` \"$p\" ` will match the value in shell variable ` p `
+  - Replacing ` '$p' ` with ` "$p" ` will match the value in shell variable ` p `
   - Hence, ` "$VARNAME" ` can be used to match for a shell variable value.
 
 
@@ -195,7 +195,7 @@ sed -n -e '/microsoft/p' sample.txt
 ```
 
 * Try for yourself:
-  - print the line which matches address `/in place of/`.
+  - print the line which matches address ` /in place of/ `.
   - print lines which does not match the address ` /text/ `
 
 
@@ -250,7 +250,7 @@ sed -e '1s/linux/LINUX/g'
 sed -E -e '3,6s/^[[:digit:]]+ //g' sample.txt
 ```
 
-  - from line 3 upto the occurrence of phrase `symbolic`.
+  - from line 3 upto the occurrence of phrase *symbolic*.
 
 ```bash
 sed -E -e '3,/symbolic/s/^[[:digit:]]+ //g' sample.txt
@@ -260,12 +260,12 @@ sed -E -e '3,/symbolic/s/^[[:digit:]]+ //g' sample.txt
   - do the same for all lines.
   - do the same starting from line 1, every 3rd line.
   - do the same for even numbered line (with and without using ` ! `).
-  - do the same for the address range `/text/,/video/`
+  - do the same for the address range ` /text/,/video/ `
 
 ### Adding a line before and after a line.
 
-* The ` sed ` ` i ` (`i`nsert) command can be used to add a line before a line specified by address.
-* The ` sed ` ` a ` (`a`ppend) command can be used to add a line after a line specified by address.
+* The sed ` i ` (`i`nsert) command can be used to add a line before a line specified by address.
+* The sed ` a ` (`a`ppend) command can be used to add a line after a line specified by address.
 
 * To insert a header line before the first line.
 
@@ -294,9 +294,9 @@ sed -e '1~5i ------- break --------' sample.txt
 
 ### Replacing or changing a line with some text
 
-* The ` sed ` ` c ` (`c`hange line) command can be used to change che contents of a line with new content.
+* The sed ` c ` (`c`hange line) command can be used to change che contents of a line with new content.
 
-* To change the lines which match the address `/miscosoft/`
+* To change the lines which match the address ` /miscosoft/ `
 
 ```bash
 sed -e '/microsoft/c ------censored------' sample.txt
