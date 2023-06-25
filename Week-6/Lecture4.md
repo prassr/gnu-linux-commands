@@ -25,15 +25,16 @@
 * Run a mkbackup.sh as root every working day at 02:05 AM.
 
 ```terminal
-*-------------------- minute (0 - 59)
-| *------------------ hour (0 - 23)
-| | *---------------- day of month (1 - 31)
-| | | *-------------- month (1 - 12) OR jan,feb,... 
-| | | | *------------ day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,...
-| | | | |   *-------- user-name
-| | | | |   |    *--- command to execute
-| | | | |   |    |
-5 2 * * 1-5 root cd /home/a/scripts/backup && ./mkbackup.sh 
+# ----------------------------- minute (0 - 59)
+# |  --------------------------- hour (0 - 23)
+# |  |  ------------------------- day of month (1 - 31)
+# |  |  |   -------------------- month (1 - 12) OR jan,feb,... 
+# |  |  |   |   ------------- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,...
+# |  |  |   |   |   --------- user-name
+# |  |  |   |   |   |    ---- command to execute
+# |  |  |   |   |   |    |
+# m  h dom mon dow user cmd
+  5  2  *   *  1-5 root cd /home/a/scripts/backup && ./mkbackup.sh 
 ```
 
 ### Startup Scripts
