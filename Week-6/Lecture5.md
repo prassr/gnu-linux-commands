@@ -71,12 +71,12 @@ sed -f ./myscript.sed input.txt
 | action | description    |
 |:---------------: | --------------- |
 | ` p `   | Print the pattern space   |
-|    | Delete the pattern space   |
+|  ` d `  | Delete the pattern space   |
 | ` s `   | Substitute using regex match ` [address]s/search/replace/[flags] ` |
 | ` = ` | Print current input line number, \n |
 | ` # ` | comment | 
 | ` i `   |  Insert above the current line  |
-|    | Append below the current line |
+|  ` a `  | Append below the current line |
 | ` c `   | Change current line |
 
 ### programming
@@ -84,11 +84,11 @@ sed -f ./myscript.sed input.txt
 |  syntax  |  description   |
 |:--------------:| --------------- |
 | ` b label ` | Branch unconditionally to *label* |
-|    | Specify location of *label* for brach command  |
+|  ` :label `  | Specify location of *label* for branch command  |
 | ` N `   | Add a new line to the pattern space and append line of input into it  |
 | ` q `   | Exit sed without processing further commands or input lines  |
 | ` t label `   | Branch to label only if there was a successful substitution was made   |
-|     |  Branch to label only if there was **no** successful substitution was made |
+|  ` T label `   |  Branch to label only if there was **no** successful substitution was made |
 | ` w filename `   | Write pattern space to filename   |
 | ` x `   | Exchange the contents of hold and pattern spaces |
 
