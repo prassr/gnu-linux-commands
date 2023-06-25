@@ -27,6 +27,13 @@
 * [Lecture 1](/Week-5/Lecture1.md)
 * [Lecture 2](/Week-5/Lecture2.md)
 
+### [Week 6](/Week-6)
+
+* [Lecture 1](/Week-6/Lecture1.md)
+* [Lecture 2](/Week-6/Lecture2.md)
+* [Lecture 3](/Week-6/Lecture3.md)
+* [Lecture 3](/Week-6/Lecture3.md)
+* [Lecture 5](/Week-6/Lecture5.md)
 
 Professor details:
 
