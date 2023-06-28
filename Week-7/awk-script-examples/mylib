@@ -1,0 +1,9 @@
+function myfunc1()
+{
+  printf "%s\n", $1
+}
+
+function myfunc2(a)
+{
+  return a*rand()
+}
