@@ -100,7 +100,9 @@ sed -f ./myscript.sed input.txt
 * Use with other shell scripts on command line using pipe
 
 *sed is available everywhere !*
+
 *sed is a meant for text processing, fast in execution*
+
 *use sed to pre-process input for further processing*
 
 ## Demonstration
