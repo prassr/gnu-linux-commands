@@ -200,15 +200,15 @@ It is the mode where you start typing text for editing file.
 You can enter insert mode in multiple ways with different necessities.
 
 *  ` i `
-	- Start inserting text from the cursor position.
+	- Start inserting text before the character under cursor.
 * ` I `
 	- Move cursor to the start of the current line.
 * ` O `
 	- Insert line above current line.
 * ` o `
-	- Insert line below current line.
+	- Append line below current line.
 * ` a `
-	- Move cursor by one character.
+	- Start appending text after the character under cursor.
 * ` A `
 	- Move cursor to the end of current line
 
