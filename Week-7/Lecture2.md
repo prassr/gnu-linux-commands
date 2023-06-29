@@ -136,7 +136,7 @@ or
   - The sorted output can be obtained using ` sort -n ` on output of previous action.
   
 
-* Using ` [dig](#dig) ` to find the DNS of the ip address along with the count stats
+* Using [` dig `](/Week-8/Lecture2.md/#dig) to find the DNS of the ip address along with the count stats
   - Time run script-2 on input file.
   - See the output. 
 
@@ -146,26 +146,4 @@ or
 
 ```terminal
 ~$ date --date="5 days ago" +%d/%m/%Y
-```
-
-## ` dig `
-* ` dig ` is a DNS lookup utility.
-
-Syntax:
-
-```syntax
-dig -x ip-address
-```
-
-Example:
-* ` dig ` for ip address 54.209.123.136
- 
-```terminal
-~$ dig -x 54.209.123.136
-```
-
-* Getting only the DNS of the ip address by suppressing all other output
-
-```terminal
-~$ dig +noall +answer -x 34.234.167.93
 ```
