@@ -1,5 +1,5 @@
 # Linux Process Management
-* Helps to switch between tasks while we are in command line environent.
+* Helps to switch between tasks while we are in the command line environment.
 ## ` sleep `
 * Delay for a specified amount (` NUMBER `) of time.
 ```bash
@@ -26,25 +26,25 @@ command &
 * ` [1] ` denotes the command number that is pushed to background. Not to be confused with ` 5477 ` which is ` PID `
 
 ## ` coproc `
-* Bash builtin command to create interactive asynchronous subshells.
+* Bash builtin command to create interactive asynchronous process.
 * The program runs asynchronously and can listen to standard input and give back standard output on need.
 
-* Run command(s) in a subshell. `NAME` is optional, default name is `COPROC`
+* Run command(s) in an executing shell. ` NAME ` is optional, default name is ` COPROC `
 ```bash
 coproc [NAME] { command; }
 ```
 * Write to a specific coprocess stdin
-```
+```bash
 echo "input" >&"${NAME[1]}"
 ```
 * Read from a specific coprocess stdout
-```
+```bash
 read varname <&"${NAME[0]}"
 ```
 
 * Create a coprocess running `bc`
 ```terminal
-~$ coproc BC { bc --mathlib; };	# creates a coprocess in a subshell
+~$ coproc BC { bc --mathlib; };	# creates a coprocess
 [1] 3820
 ~$ echo "22/7" >&"${BC[1]}" 	# write input to coprocess  
 ~$ read output <&"${BC[0]}"	# read output from coprocess
@@ -214,7 +214,7 @@ himBHs
 ```
 
 * Let's run a command to check if there can be less number of flags.
-	- ` bash ` : spawn a subshell
+	- ` bash ` : spawn a childshell
 	- ` -c `  : consider first non-option argument as command
 	- ` \ ` : escape character to stop early interpretation of ` $- `
 ```terminal
@@ -222,13 +222,11 @@ himBHs
 hBc
 ```
 
-<!--
-* Check the pid of subshell and printing the forest view using ` ps `. 
+* Check the pid of childshell and printing the forest view using ` ps `. 
 	- Commands are separated with ` ; `
 ```terminal
 ~$ bash -c "echo \$$; echo \$-; ps --forest"
 ```
--->
 
 ## ` history ` command
 
