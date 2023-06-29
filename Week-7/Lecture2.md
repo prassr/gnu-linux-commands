@@ -136,7 +136,7 @@ or
   - The sorted output can be obtained using ` sort -n ` on output of previous action.
   
 
-* Using ` [dig](#dig) ` to find the DNS of the ip address along with the count stats
+* Using [` dig `](#dig) to find the DNS of the ip address along with the count stats
   - Time run script-2 on input file.
   - See the output. 
 
