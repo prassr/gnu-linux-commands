@@ -134,9 +134,9 @@ or
   - Run the script on input file and see the time
   - To only get only the ip stats run the script-1a on input file
   - The sorted output can be obtained using ` sort -n ` on output of previous action.
-  
 
 * Using [` dig `](/Week-8/Lecture2.md/#dig) to find the DNS of the ip address along with the count stats
+
   - Time run script-2 on input file.
   - See the output. 
 
