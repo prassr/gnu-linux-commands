@@ -14,3 +14,7 @@ NF <= 2 {
 END{
 	print "END action is processed";
 }
+
+# line 4 : field separator (FS) can be anything within square brackets
+# line 6-9 : If NF is more than 2 then this block will be executed.
+# line 10-13 : If NF is at most 2 then this block will be executed.

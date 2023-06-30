@@ -17,3 +17,7 @@ BEGIN{
 END{
 	print "END action is processed";
 }
+
+# line 5 : process only lines which match the regex [[:alpha:]], which stands for alphabetic characters
+# line 9 : process lines which has alphanumeric characters ([[:alnum:]]) in them
+# line 13 : process lines which has digits ([[:digit:]]) in them

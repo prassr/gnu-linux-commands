@@ -17,3 +17,7 @@ $1 ~ /[[:digit:]]/ {
 END{
 	print "END action is processed";
 }
+
+# line 5 : process records whose first field ($1) matches the alphabetic characters ([[:alpha:]]) 
+# line 9 : process records whose first field matches alphanumeric characters ([[:alnum:]])
+# line 13 : process records whose first field matches digits ([[:digit:]])
