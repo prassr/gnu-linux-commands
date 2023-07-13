@@ -33,10 +33,10 @@ git config --global user.name <your-name>
 To set the user email use the command below.
 
 ```bash
-git config --global user.name <your-email> 
+git config --global user.email <your-email> 
 ```
 
-To set the email and name just for a repository remove ` --global ` option from the commands above and run them.
+To set the email and name only for a particular repository remove ` --global ` option from the commands above and run them.
 
 Here, you are almost done with the configuration. We will look it later if some more configurations needed.
 
@@ -54,7 +54,7 @@ We will go by the first way.
 
 This will initialize an empty repository.
 
-You can create a file within ~/myrepo. Write Hello World! program in any language of your choice with name ` hello.\<ext> `
+You can create a file within ~/myrepo. Write Hello World! program in any language of your choice with name ` hello.<ext> `
 
 I will use python. 
 It's great that I have it already.
@@ -139,7 +139,7 @@ print("Welcome!!!")
 Check the status. What you see?
 
 You have modified the file, and your changes needs to be staged before commit.
-As a suggestion, you can see the commands you have to use for staging or discarding.
+As a suggestion, you can see the commands you have to use for staging or discarding the changes.
 
 Use the first suggested command, and we will use it as below.
 
@@ -166,6 +166,7 @@ To undo changes if any you can use the command below,
 ```bash
 git restore <file>
 ```
+Note: All changes made after the recent commit will be lost.
 
 * Restoring a modified file after adding to the staging area
 
@@ -277,8 +278,11 @@ To see full log in git run the command below
 What do you see?
 
 Line 1 : Commit id (also knows as commit SHA or commit hash) and the branch name.
+
 Line 2 : Author name and email id of the author of the commit.
+
 Line 3 : Timestamp on which the commit took place.
+
 Line 4- : The commit message. It may span multiple lines.
 
 And the above 4 lines repeated.
@@ -289,7 +293,7 @@ Here, you see only two commits which may not be the case when you are working wi
 
 Is there any way to make the log line short?
 
-Yes. To see commits on single line just add ` --online ` to ` git log `
+Yes. To see commits on single line just add ` --oneline ` to ` git log `
 
 ```terminal
 ~/myrepo$ git log --oneline 
