@@ -189,7 +189,7 @@ drwxrwxr-x 2 groot groot  3 Nov 19 19:41 Downloads
 * ` c ` : Character file (e.g. terminal ` tty `)
 * ` b ` : Block file (e.g. Hard Disk (` sda `))
 * ` s ` : Socket file
-* ` p ` : Named pipe
+* ` | ` : Named pipe
 
 ### File Permission String
 * It is a 9 character string, starting after file type.
