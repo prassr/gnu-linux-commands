@@ -241,7 +241,7 @@ ll: command not found
 ~$ cp file1 mydir
 ```
 * Both arguments are files.
-* ` file2 ` is overridden by contents of ` file2 `
+* ` file2 ` is overridden by contents of ` file1 `
 ```terminal
 ~$ cp file1 file2
 ```
