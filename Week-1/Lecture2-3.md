@@ -436,7 +436,7 @@ Sat, 17 Dec 2022 13:59:05 +0200
 
 ### ` ncal ` and ` cal `
 * ` ncal [month] [year] ` : Displays calendar of current month by default.
-* Both belong to the same gnu utility ` ncal `, orientation is the only difference.
+* Both belong to the same bsd utility ` ncal `, orientation is the only difference.
 * ` month ` in long, short text (case-insensitive) or number (1-12, works only when year is specified.) format.
 * ` year ` in `YY` or `YYYY` format.
 * Display calendar for November, 2022
