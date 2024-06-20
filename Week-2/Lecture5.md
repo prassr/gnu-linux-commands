@@ -55,7 +55,7 @@ read varname <&"${NAME[0]}"
 	
 * Run command `sleep 10` as a coprocess.
 	- command run within the same shell.
-	- process name can not be given.
+	- process name can be not given.
 	- default name is used.
 ```terminal
 ~$ coproc sleep 10
