@@ -168,7 +168,7 @@ Examples:
 * The value persits even if the process is finished.
 
 
-# More on [Program Exit Codes](/Week_2/Lecture2.md#program-exit-codes)
+# More on [Program Exit Codes](/Week-2/Lecture2.md#program-exit-codes)
 
 *  If a command is run successfully then error code is ` 0 `.
 
@@ -273,7 +273,7 @@ Examples:
 Exit codes are useful when in a program you want to run a process based on exit code of other process.
 
 
-# More on [Flags Set in Bash](/Week_2/Lecture2.md#flags-set-in-bash)
+# More on [Flags Set in Bash](/Week-2/Lecture2.md#flags-set-in-bash)
 
 ## ` $- `
 * Special variable to print the flags set in bash.
