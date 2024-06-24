@@ -165,7 +165,8 @@ bash
 ### [` kill `](/Week_2/Lecture5.md#kill)
 * Kill running/stopped process or processes.
 
-# [Program Exit Codes](/Week_2/Lecture5.md#more-on-program-exit-codes "More on Program Exit Codes")
+# [Program Exit Codes](/Week-2/Lecture5.md#more-on-program-exit-codes "More on Program Exit Codes")
+
 * ` 0 ` - success
 * ` 1 ` - failure
 * ` 2 ` - misuse of shell builtins when the permissions are not adequate
