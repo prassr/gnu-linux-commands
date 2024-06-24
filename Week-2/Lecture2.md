@@ -67,7 +67,7 @@ User logged into the shell is: groot
 rich-linux
 ```
 * ` $PWD ` 
-	- Stores the path of current directory. Same as [` pwd `](/Week_1/Lecture2-3.md#pwd)
+	- Stores the path of current directory. Same as [` pwd `](/Week-1/Lecture2-3.md#pwd)
 ```terminal
 ~$ echo $PWD
 /home/groot
@@ -145,24 +145,24 @@ Wednesday 21 December 2022 06:26:10 PM EET
 bash
 ```
 ### ` $$ `
-* see [ps](/Week_1/Lecture2-3.md#ps)
+* see [ps](/Week-1/Lecture2-3.md#ps)
 ```terminal
 ~$ echo $$
 3423
 ```
 
-# [Process Control](/Week_2/Lecture5.md "Linux Process Management")
-### [` & `](/Week_2/Lecture5.md#&)
+# [Process Control](/Week-2/Lecture5.md "Linux Process Management")
+### [` & `](/Week-2/Lecture5.md#&)
 * Use to run a program in the background.
-### [` fg `](/Week_2/Lecture5.md#fg)
+### [` fg `](/Week-2/Lecture5.md#fg)
 * Bring the program to the foreground.
-### [` coproc `](/Week_2/Lecture5.md#coproc)
+### [` coproc `](/Week-2/Lecture5.md#coproc)
 * Run a program while also being able to use the shell.
-### [` jobs `](/Week_2/Lecture5.md#jobs)
+### [` jobs `](/Week-2/Lecture5.md#jobs)
 * List all background jobs.
-### [` top `](/Week_2/Lecture5.md#top)
+### [` top `](/Week-2/Lecture5.md#top)
 * Live view of all running processes.
-### [` kill `](/Week_2/Lecture5.md#kill)
+### [` kill `](/Week-2/Lecture5.md#kill)
 * Kill running/stopped process or processes.
 
 # [Program Exit Codes](/Week-2/Lecture5.md#more-on-program-exit-codes "More on Program Exit Codes")
@@ -185,7 +185,7 @@ bash
 1
 ```
 
-# [Flags set in bash](/Week_2/Lecture5.md#more-on-flags-set-in-bash)
+# [Flags set in bash](/Week-2/Lecture5.md#more-on-flags-set-in-bash)
 * ` h ` - locate and hash commands
 * ` B ` - brace expansion enabled
 * ` i ` - interactive mode
