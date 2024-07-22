@@ -46,7 +46,6 @@
 * Termux app from Fredrick Fornwall 
     - [GitHub](https://github.com/termux/termux-app/releases)
     - [F-Droid](https://f-droid.org/en/packages/com.termux/) (Direct link. No need to download F-Droid)
-    - [Google Play Store](https://play.google.com/store/apps/details?id=com.termux) (deprecated)
 
 Now we are ready!
 Let's dive into terminal to be ` su `! :)
