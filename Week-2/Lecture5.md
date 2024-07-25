@@ -318,7 +318,7 @@ Exit codes are useful when in a program you want to run a process based on exit 
 	bash
 	```
 
-## Brace Expnasion
+## Brace Expansion
 
 * Enabled using ` B ` flag.
 * Expand ` {start..stop} ` into list of values between ` start ` and ` stop ` inclusive.
