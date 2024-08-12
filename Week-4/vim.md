@@ -62,7 +62,7 @@ It is used to run native or system commands in vi editor.
 | ` :x ` | write changes made to the disk and quit |
 | ` :wq ` | write changes made to the disk and quit |
 | ` :q ` | quit (if write out is over) |
-| ` !q ` | ignore chnges and quit |
+| ` :q! ` | ignore changes and quit |
 
 
 #### Moving around in vi
