@@ -96,7 +96,7 @@ f1  f2
 * Can also specify number of lines using ` -n ` option.
 * To print last 5 lines.
 ```terminal
-/etc$ head -n 5 profile
+/etc$ tail -n 5 profile
 ```
 
 ### ` wc `
