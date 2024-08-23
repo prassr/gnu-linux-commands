@@ -89,7 +89,7 @@ hostname is $HOSTNAME and user is groot
 ## Commands to Inspect Shell Variables
 
 ### ` printenv `
-* Print all o part of environment.
+* Print all or part of environment.
 ```terminal
 ~$ printenv HOME
 /home/groot
