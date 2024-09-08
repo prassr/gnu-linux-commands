@@ -124,6 +124,8 @@ Examples:
 	sleep 30
 	```
 
+
+
 ## ` jobs `
 
 * List the processes running in the background by the user.
@@ -135,12 +137,31 @@ Examples:
 	[1]+  Running                 coproc COPROC sleep 30 &
 	```
 
+## ` bg `
+
+* A process running in the foreground can be stopped using the key combination ` CTRL+Z `.
+* To rerun the process in the background ` bg ` command can be used.
+* From the above examples for the command ` jobs `, you can see a number like ` [number] `, this number can be used to used with `bg`. 
+
+* Rerun the most recently stopped process in the background.
+
+```bash
+bg
+```
+
+* Rerun the process in the background with a number ` [1] `
+
+```
+bg %1
+```
+
 
 ## ` top `
 
 * Prints summary and live snapshots of processes running onto the screen.
 * It is in decreasing order of CPU utilization ` %CPU `.
-* Use ` q ` key or ` ^C ` to quit, ` ^Z ` to suspend it (move to background).  
+* Use ` q ` key or ` ^C ` to quit, ` ^Z ` to suspend it (move to background).
+* It features ` free `, ` uptime ` and ` ps ` command as a single command.
 
 	```bash
 	top
@@ -157,7 +178,7 @@ Examples:
 	```terminal
 	~$ coproc sleep 10
 	[1] 5507
-	~$ kill -9 5530
+	~$ kill -9 5507
 	~$
 	[1]+	Killed				coproc COPROC sleep 10		
 	```
