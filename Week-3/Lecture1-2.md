@@ -1,6 +1,6 @@
 # Combining Commands and Files
 
-* In GNU/Linux OS it is possible to combine multiple commands together a to achieve a task.
+* In GNU/Linux OS it is possible to combine multiple commands together to achieve a task.
 
 ## Executing Multiple Commands
 
